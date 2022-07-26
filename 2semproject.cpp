@@ -4,89 +4,48 @@
 #include<windows.h>
 #include<conio.h>
 using namespace std;
+struct student{
+	int id;
+	int bill,paid;
+}s;
 void view(){
 	string readAndWrite;
 	char menuChoice;
-	cout<<"\nHere are the list you can view\n";
-				cout<<"\n1>>Veg Food\n2>>Non-veg Food\n3>>Drinks\n4>>Snacks\n5>>Dessert\n6>>All list";
+	cout<<"\n\n\t\t\t\t\tHere are the list you can view\n";
+	system("cls");
+				cout<<"\n\t\t\t\t\t1>>Paid List\n\t\t\t\t\t2>>Liability list ";
 				menuChoice=getche();
 				ifstream readData;
 				switch(menuChoice){
 					case '1':{
-						readData.open("vegFood.dat");
+						readData.open("student.dat");
+						system("cls");
+						cout<<"ID\tBill Amount\tPaid Amount";
+						while(!readData.eof()){
 						getline(readData,readAndWrite);
-						cout<<readAndWrite<<endl;
+						cout<<"\n---------------------------------------";
+						cout<<endl<<readAndWrite<<endl;
+						}
 						getch();
 						readData.close();
 						break;
 					}
 					case '2':{
-						readData.open("nonVegFood");
+						readData.open("liability.dat");
+						system("cls");
+						cout<<"ID\tBill Amount\tDue Amount";
+						while(!readData.eof()){
 						getline(readData,readAndWrite);
-						cout<<readAndWrite<<endl;
-						getch();
-						readData.close();
-						break;
-					}
-					case '3':{
-						readData.open("drinks.dat");
-						getline(readData,readAndWrite);
-						cout<<readAndWrite<<endl;
-						readData.close();
-						getch();
-						break;
-					}
-					case '4':{
-						readData.open("snacks.dat");
-						getline(readData,readAndWrite);
-						cout<<readAndWrite<<endl;
-						readData.close();
-						getch();
-						break;
-					}
-					case '5':{
-						readData.open("dessert.dat");
-						getline(readData,readAndWrite);
-						cout<<readAndWrite<<endl;
-						readData.close();
-						getch();
-						break;
-					}
-					case '6':{
-						cout<<"\nVeg";
-						readData.open("vegFood.dat");
-						getline(readData,readAndWrite);
-						cout<<readAndWrite<<endl;
-						getch();
-						readData.close();
-						cout<<"\n Non-veg";
-						readData.open("nonVegFood");
-						getline(readData,readAndWrite);
-						cout<<readAndWrite<<endl;
-						getch();
-						readData.close();
-						cout<<"\n Drinks";
-						readData.open("drinks.dat");
-						getline(readData,readAndWrite);
-						cout<<readAndWrite<<endl;
-						getch();
-						readData.close();
-						cout<<"\n Snacks";
-						readData.open("snacks.dat");
-						getline(readData,readAndWrite);
-						cout<<readAndWrite<<endl;
-						getch();
-						readData.close();
-						cout<<"\n Desserts";
-						readData.open("dessert.dat");
-						getline(readData,readAndWrite);
-						cout<<readAndWrite<<endl;
+						cout<<"\n---------------------------------------";
+						cout<<endl<<readAndWrite<<endl;
+						}
 						getch();
 						readData.close();
 						break;
 					}
 					default:
 						cout<<"\nWrong choice";
+						break;
 				}
 }
 class project{
@@ -107,10 +66,9 @@ class project{
 			cout<<"\n\n\n\n\n\n\n\t\t\t\t\t\tWe have following menu:\n\n";
 			cout<<"\t\t\t\t\t\t1. Food and Drinks\n";
 			cout<<"\t\t\t\t\t\t2. View List\n";
-			cout<<"\t\t\t\t\t\t3. Liability List\n";
+			cout<<"\t\t\t\t\t\t3. Change Password\n";
 			cout<<"\t\t\t\t\t\t4. Delete record\n";
-			cout<<"\t\t\t\t\t\t5. Income and expense\n";
-			cout<<"\t\t\t\t\t\t6. Exit\n";
+			cout<<"\t\t\t\t\t\t5. Exit\n";
 			cout<<"\t\t\t\t\t\tChoose from the above list: ";
 			menuChoice=getche();
 			switch(menuChoice)
@@ -200,16 +158,21 @@ class project{
 					}
 					else if(another=='n' || another=='N'){
 						ofstream vegFood;
-						vegFood.open("vegFood.dat");
+						vegFood.open("student.dat", ios :: app);
 						if(!vegFood){
 							cout<<"file not found:";
 						}
 						else{
 							cout<<"\nEnter your student ID:";
 							cin>>ID;
+							s.id=ID;
 							cout<<"\nYour bill is Rs"<<sum;
+							s.bill=sum;
 							cout<<"\nEnter your paid amount: ";
 							cin>>paidAmt;
+							s.paid=paidAmt;
+							vegFood<<s.id<<"\t"<<s.bill<<"\t\t"<<s.paid<<endl;
+							vegFood.close();
 							if(paidAmt>sum){
 								amt=paidAmt-sum;
 								cout<<"\nReturn amount Rs"<<amt;
@@ -217,17 +180,22 @@ class project{
 							}
 							else if(paidAmt<sum){
 								amt=sum-paidAmt;
+								s.paid=amt;
 								cout<<"\nYour due amount is Rs"<<amt;
+								ofstream a;
+								a.open("liability.dat", ios :: app);{
+									a<<s.id<<"\t"<<s.bill<<"\t\t"<<s.paid<<endl;
+									a.close();
+								}
 								getch();
 							}
 							else {
 								cout<<"Return amount is Rs 0";
 								getch();
 							}
-							vegFood<<ID;
 							break;
 						}
-						vegFood.close();
+						
 					}
 
 					}
@@ -311,16 +279,21 @@ class project{
 					}
 					else if(another=='n' || another=='N'){
 						ofstream nonVegFood;
-						nonVegFood.open("nonVegFood.dat");
+						nonVegFood.open("student.dat", ios :: app);
 						if(!nonVegFood){
 							cout<<"file not found:";
 						}
 						else{
 							cout<<"\nEnter your student ID:";
 							cin>>ID;
+							s.id=ID;
 							cout<<"\nYour bill is Rs"<<sum;
+							s.bill=sum;
 							cout<<"\nEnter your paid amount: ";
 							cin>>paidAmt;
+							s.paid=paidAmt;
+							nonVegFood<<s.id<<"\t"<<s.bill<<"\t\t"<<s.paid<<endl;
+							nonVegFood.close();
 							if(paidAmt>sum){
 								amt=paidAmt-sum;
 								cout<<"\nReturn amount Rs"<<amt;
@@ -329,16 +302,19 @@ class project{
 							else if(paidAmt<sum){
 								amt=sum-paidAmt;
 								cout<<"\nYour due amount is Rs"<<amt;
+								ofstream a;
+								s.paid=amt;
+								a.open("liability.dat", ios :: app);{
+									a<<s.id<<"\t"<<s.bill<<"\t"<<s.paid<<endl;
+									a.close();
 								getch();
 							}
-							else {
+							}else {
 								cout<<"Return amount is Rs 0";
 								getch();
 							}
-							nonVegFood<<ID;
 							break;
 						}
-						nonVegFood.close();
 					}
 
 					}
@@ -420,16 +396,21 @@ class project{
 					}
 					else if(another=='n' || another=='N'){
 						ofstream drinks;
-						drinks.open("drinks.dat");
+						drinks.open("student.dat", ios :: app);
 						if(!drinks){
 							cout<<"file not found:";
 						}
 						else{
 							cout<<"\nEnter your student ID:";
 							cin>>ID;
+							s.id=ID;
 							cout<<"\nYour bill is Rs"<<sum;
+							s.bill=sum;
 							cout<<"\nEnter your paid amount: ";
 							cin>>paidAmt;
+							s.paid=paidAmt;
+							drinks<<s.id<<"\t"<<s.bill<<"\t\t"<<s.paid<<endl;
+							drinks.close();
 							if(paidAmt>sum){
 								amt=paidAmt-sum;
 								cout<<"\nReturn amount Rs"<<amt;
@@ -438,16 +419,20 @@ class project{
 							else if(paidAmt<sum){
 								amt=sum-paidAmt;
 								cout<<"\nYour due amount is Rs"<<amt;
+								ofstream a;
+								s.paid=amt;
+								a.open("liability.dat", ios :: app);{
+									a<<s.id<<"\t"<<s.bill<<"\t\t"<<s.paid<<endl;
+									a.close();
+								}
 								getch();
 							}
 							else {
 								cout<<"Return amount is Rs 0";
 								getch();
 							}
-							drinks<<ID;
 							break;
 						}
-						drinks.close();
 					}
 
 					}
@@ -529,16 +514,21 @@ class project{
 					}
 					else if(another=='n' || another=='N'){
 						ofstream snacks;
-						snacks.open("snacks.dat");
+						snacks.open("student.dat", ios :: app);
 						if(!snacks){
 							cout<<"file not found:";
 						}
 						else{
 							cout<<"\nEnter your student ID:";
 							cin>>ID;
+							s.id=ID;
 							cout<<"\nYour bill is Rs"<<sum;
+							s.bill=sum;
 							cout<<"\nEnter your paid amount: ";
 							cin>>paidAmt;
+							s.paid=paidAmt;
+							snacks<<s.id<<"\t"<<s.bill<<"\t\t"<<s.paid<<endl;
+							snacks.close();
 							if(paidAmt>sum){
 								amt=paidAmt-sum;
 								cout<<"\nReturn amount Rs"<<amt;
@@ -547,16 +537,20 @@ class project{
 							else if(paidAmt<sum){
 								amt=sum-paidAmt;
 								cout<<"\nYour due amount is Rs"<<amt;
+								ofstream a;
+								s.paid=amt;
+								a.open("liability.dat", ios :: app);{
+									a<<s.id<<"\t"<<s.bill<<"\t\t"<<s.paid<<endl;
+									a.close();
+								}
 								getch();
 							}
 							else {
 								cout<<"Return amount is Rs 0";
 								getch();
 							}
-							snacks<<ID;
 							break;
 						}
-						snacks.close();
 					}
 
 					}
@@ -638,16 +632,21 @@ class project{
 					}
 					else if(another=='n' || another=='N'){
 						ofstream dessert;
-						dessert.open("dessert.dat");
+						dessert.open("student.dat", ios :: app);
 						if(!dessert){
 							cout<<"file not found:";
 						}
 						else{
 							cout<<"\nEnter your student ID:";
 							cin>>ID;
+							s.id=ID;
 							cout<<"\nYour bill is Rs"<<sum;
+							s.bill=sum;
 							cout<<"\nEnter your paid amount: ";
 							cin>>paidAmt;
+							s.paid=paidAmt;
+							dessert<<s.id<<"\t"<<s.bill<<"\t\t"<<s.paid<<endl;
+							dessert.close();
 							if(paidAmt>sum){
 								amt=paidAmt-sum;
 								cout<<"\nReturn amount Rs"<<amt;
@@ -656,16 +655,20 @@ class project{
 							else if(paidAmt<sum){
 								amt=sum-paidAmt;
 								cout<<"\nYour due amount is Rs"<<amt;
+								ofstream a;
+								s.paid=amt;
+								a.open("liability.dat", ios :: app);{
+									a<<s.id<<"\t"<<s.bill<<"\t\t"<<s.paid<<endl;
+									a.close();
+								}
 								getch();
 							}
 							else {
 								cout<<"Return amount is Rs 0";
 								getch();
 							}
-							dessert<<ID;
 							break;
 						}
-						dessert.close();
 					}
 
 					}
@@ -680,11 +683,12 @@ class project{
 				}
 			case '2':			
 			{
+				system("cls");
 				char passwordChoice;
 	ifstream fin;
 	fin.open("password.dat");
 	if(!fin){
-		cout<<"\nHello admin \n The software does not have password!!!\n Do you want to set password if yes press 'y' if no press 'n' \n";
+		cout<<"\n\n\t\t\t\t\tHello admin \n\t\t\t\tThe software does not have password!!!\n\t\t\t\tDo you want to set password if yes press 'y' if no press 'n' \n";
 		passwordChoice=getche();
 		if(passwordChoice=='y'){
 			system("cls");
@@ -703,20 +707,21 @@ class project{
 				fout<<accessToken<<endl;
 				fout.close();
 				system("cls");
-				cout<<"\t\t\t\t\tPassword set sucessfully \n";
+				cout<<"\n\t\t\t\t\tPassword set sucessfully \n";
 				getch();
 				view();
 			}
 			else{
 				system("cls");
-				cout<<"Your password does not match\n Please enter password again  \n";
+				cout<<"\n\t\t\t\t\tYour password does not match\n\t\t\t\t\t Please enter password again  \n";
 				getch();
 				goto flag11;
 			}
 		}
 		else if(passwordChoice=='n'){
 			system("cls");
-			cout<<"\nAnyone could see the list. It is recommended to set password";
+			cout<<"\n\n\t\t\t\t\tAnyone could see the list. It is recommended to set password";
+			getch();
 			view();
 		}
 		
@@ -727,17 +732,18 @@ class project{
 		getline(fin,check);
 		cout<<"Hello admin"<<endl;
 		flag12:
-		cout<<"Enter your password to access the program  ";
+		cout<<"\nEnter your password to access the program  ";
 		cin>>accessToken1;
 		if(check==accessToken1){
 			fin.close();
 			system("cls");
 			cout<<"\t\t\t\t\t\t\t\tWelcome";
 			getch();
+			view();
 		}
 		else
 		{
-			cout<<"The entered password did not match!!!Try again!!!\n";
+			cout<<"\n\t\t\t\t\tThe entered password did not match!!!Try again!!!\n";
 			goto flag12;
 		}
 	}
@@ -745,20 +751,79 @@ class project{
 			}
 		case '3' :
 		{
+			string pass,pass1;
+			system("cls");
+			ifstream test;
+			test.open("password.dat");
+			if(!test){
+				cout<<"Password not set. Please set the password first from view list option: ";
+				getch();
+			}
+			else{
+				cout<<"Enter old password ";
+				getline(cin,pass);
+				test>>pass1;
+				test.close();
+				if(pass1!=pass){
+					cout<<endl<<"Password is incorrect. Access Denied"<<endl;
+					getche();
+				}
+				else{
+					string access1,access2;
+					again:
+						system("cls");
+					cout<<"Enter new password ";
+					getline(cin,access1);
+					cout<<"Enter your new password again ";
+					getline(cin,access2);
+					if(access1==access2){
+						ofstream newPassword;
+					newPassword.open("password.dat");{
+					newPassword<<access2;
+					newPassword.close();
+					}
+					}
+					else{
+						cout<<"Password did not match please enter again";
+						getch();
+						goto again;
+						system("cls");
+					}
+					
+				}
+			}
 			break;
 		}
 			case '4':
 			{
-				break;
+			/*	system("cls");
+				int deleteId;
+				cout<<"Enter student ID you want to delete: ";
+				cin>>deleteId;
+				fflush(stdin);
+				ifstream d;
+				d.open("liability.dat");
+				ofstream e;
+				e.open("new.dat");
+					while(!d.eof()){
+						 if(s.id==deleteId){
+						 	continue;
+						 }
+						 else{
+						 	e<<s.id<<"\t"<<s.bill<<"\t\t"<<s.paid<<endl;
+						 }
+					}
+					cout<<"Record deleted";
+					e.close();
+					d.close();
+					remove("liability.dat");
+					rename("new.dat","liability.dat");
+								break;*/
 			}
 			case '5':
-				{
-				 	break;
-				}
-			case '6':
 			exit(0);
 				break;
-				default :
+			default :
 				system("cls");
 				printf("Invalid option.Press any button: ");
 				getch();
