@@ -19,7 +19,13 @@ void view(){
 				switch(menuChoice){
 					case '1':{
 						readData.open("student.dat");
-						system("cls");
+						if(!readData){
+							system("cls");
+							cout<<"\t\t\tNo Data Recorded: ";
+							getch();
+						}
+						else{
+							system("cls");
 						cout<<"ID\tBill Amount\tPaid Amount";
 						while(!readData.eof()){
 						getline(readData,readAndWrite);
@@ -28,11 +34,18 @@ void view(){
 						}
 						getch();
 						readData.close();
+						}
 						break;
 					}
 					case '2':{
 						readData.open("liability.dat");
-						system("cls");
+						if(!readData){
+							system("cls");
+							cout<<"\t\t\tNo Data Recored: ";
+							getch();
+						}
+						else{
+							system("cls");
 						cout<<"ID\tBill Amount\tDue Amount";
 						while(!readData.eof()){
 						getline(readData,readAndWrite);
@@ -40,6 +53,7 @@ void view(){
 						cout<<endl<<readAndWrite<<endl;
 						}
 						getch();
+						}
 						readData.close();
 						break;
 					}
@@ -189,6 +203,7 @@ class project{
 							if(paidAmt>sum){
 								amt=paidAmt-sum;
 								cout<<"\nReturn amount Rs"<<amt;
+								getch();
 								system("cls");
 								cout<<"\t***********************************************"<<endl;
 								cout<<"\t\t\tRECEIPT"<<endl;
@@ -374,8 +389,10 @@ class project{
 									cout<<"\t"<<array[44]<<" * Fruit Cake            $"<<array[44]*100<<endl;
 								}
 								cout<<"\t==============================================="<<endl;
-								cout<<"\tTOTAL AMOUNT              $"<<sum<<endl;
-								cout<<"\tPAID  AMOUNT              $"<<paidAmt<<endl;
+								cout<<"\tTOTAL AMOUNT                       $"<<sum<<endl;
+								cout<<"\tPAID  AMOUNT                       $"<<paidAmt<<endl;
+								cout<<"\t==============================================="<<endl;
+								cout<<"\t                     THANK YOU                 "<<endl;
 								cout<<"\t==============================================="<<endl;
 								getch();
 							}
@@ -389,6 +406,7 @@ class project{
 								cout<<"\t***********************************************"<<endl;
 								if(array[0]>=1)
 								{
+									
 									cout<<"\t"<<array[0]<<" * Gralic Potato          $"<<array[0]*60<<endl;
 								}
 								if(array[1]>=1)
@@ -568,8 +586,10 @@ class project{
 									cout<<"\t"<<array[44]<<" * Fruit Cake            $"<<array[44]*100<<endl;
 								}
 								cout<<"\t==============================================="<<endl;
-								cout<<"\tTOTAL AMOUNT              $"<<sum<<endl;
-								cout<<"\tPAID  AMOUNT              $"<<paidAmt<<endl;
+								cout<<"\tTOTAL AMOUNT                       $"<<sum<<endl;
+								cout<<"\tPAID  AMOUNT                       $"<<paidAmt<<endl;
+								cout<<"\t==============================================="<<endl;
+								cout<<"\t                     THANK YOU                 "<<endl;
 								cout<<"\t==============================================="<<endl;
 								getch();
 								ofstream a;
@@ -765,8 +785,10 @@ class project{
 									cout<<"\t"<<array[44]<<" * Fruit Cake            $"<<array[44]*100<<endl;
 								}
 								cout<<"\t==============================================="<<endl;
-								cout<<"\tTOTAL AMOUNT              $"<<sum<<endl;
-								cout<<"\tPAID  AMOUNT              $"<<paidAmt<<endl;
+								cout<<"\tTOTAL AMOUNT                       $"<<sum<<endl;
+								cout<<"\tPAID  AMOUNT                       $"<<paidAmt<<endl;
+								cout<<"\t==============================================="<<endl;
+								cout<<"\t                     THANK YOU                 "<<endl;
 								cout<<"\t==============================================="<<endl;
 								getch();
 							}
@@ -1069,8 +1091,10 @@ class project{
 									cout<<"\t"<<array[44]<<" * Fruit Cake            $"<<array[44]*100<<endl;
 								}
 								cout<<"\t==============================================="<<endl;
-								cout<<"\tTOTAL AMOUNT              $"<<sum<<endl;
-								cout<<"\tPAID  AMOUNT              $"<<paidAmt<<endl;
+								cout<<"\tTOTAL AMOUNT                       $"<<sum<<endl;
+								cout<<"\tPAID  AMOUNT                       $"<<paidAmt<<endl;
+								cout<<"\t==============================================="<<endl;
+								cout<<"\t                     THANK YOU                 "<<endl;
 								cout<<"\t==============================================="<<endl;
 								getch();
 							}
@@ -1262,8 +1286,10 @@ class project{
 									cout<<"\t"<<array[44]<<" * Fruit Cake            $"<<array[44]*100<<endl;
 								}
 								cout<<"\t==============================================="<<endl;
-								cout<<"\tTOTAL AMOUNT              $"<<sum<<endl;
-								cout<<"\tPAID  AMOUNT              $"<<paidAmt<<endl;
+								cout<<"\tTOTAL AMOUNT                       $"<<sum<<endl;
+								cout<<"\tPAID  AMOUNT                       $"<<paidAmt<<endl;
+								cout<<"\t==============================================="<<endl;
+								cout<<"\t                     THANK YOU                 "<<endl;
 								cout<<"\t==============================================="<<endl;
 								getch();
 								ofstream a;
@@ -1459,8 +1485,10 @@ class project{
 									cout<<"\t"<<array[44]<<" * Fruit Cake            $"<<array[44]*100<<endl;
 								}
 								cout<<"\t==============================================="<<endl;
-								cout<<"\tTOTAL AMOUNT              $"<<sum<<endl;
-								cout<<"\tPAID  AMOUNT              $"<<paidAmt<<endl;
+								cout<<"\tTOTAL AMOUNT                       $"<<sum<<endl;
+								cout<<"\tPAID  AMOUNT                       $"<<paidAmt<<endl;
+								cout<<"\t==============================================="<<endl;
+								cout<<"\t                     THANK YOU                 "<<endl;
 								cout<<"\t==============================================="<<endl;
 								getch();
 							}
@@ -1759,8 +1787,10 @@ class project{
 									cout<<"\t"<<array[44]<<" * Fruit Cake            $"<<array[44]*100<<endl;
 								}
 								cout<<"\t==============================================="<<endl;
-								cout<<"\tTOTAL AMOUNT              $"<<sum<<endl;
-								cout<<"\tPAID  AMOUNT              $"<<paidAmt<<endl;
+								cout<<"\tTOTAL AMOUNT                       $"<<sum<<endl;
+								cout<<"\tPAID  AMOUNT                       $"<<paidAmt<<endl;
+								cout<<"\t==============================================="<<endl;
+								cout<<"\t                     THANK YOU                 "<<endl;
 								cout<<"\t==============================================="<<endl;
 								getch();
 							}
@@ -1952,8 +1982,10 @@ class project{
 									cout<<"\t"<<array[44]<<" * Fruit Cake            $"<<array[44]*100<<endl;
 								}
 								cout<<"\t==============================================="<<endl;
-								cout<<"\tTOTAL AMOUNT              $"<<sum<<endl;
-								cout<<"\tPAID  AMOUNT              $"<<paidAmt<<endl;
+								cout<<"\tTOTAL AMOUNT                       $"<<sum<<endl;
+								cout<<"\tPAID  AMOUNT                       $"<<paidAmt<<endl;
+								cout<<"\t==============================================="<<endl;
+								cout<<"\t                     THANK YOU                 "<<endl;
 								cout<<"\t==============================================="<<endl;
 								getch();
 								ofstream a;
@@ -2150,8 +2182,10 @@ class project{
 									cout<<"\t"<<array[44]<<" * Fruit Cake            $"<<array[44]*100<<endl;
 								}
 								cout<<"\t==============================================="<<endl;
-								cout<<"\tTOTAL AMOUNT              $"<<sum<<endl;
-								cout<<"\tPAID  AMOUNT              $"<<paidAmt<<endl;
+								cout<<"\tTOTAL AMOUNT                       $"<<sum<<endl;
+								cout<<"\tPAID  AMOUNT                       $"<<paidAmt<<endl;
+								cout<<"\t==============================================="<<endl;
+								cout<<"\t                     THANK YOU                 "<<endl;
 								cout<<"\t==============================================="<<endl;
 								getch();
 							}
@@ -2451,8 +2485,10 @@ class project{
 									cout<<"\t"<<array[44]<<" * Fruit Cake            $"<<array[44]*100<<endl;
 								}
 								cout<<"\t==============================================="<<endl;
-								cout<<"\tTOTAL AMOUNT              $"<<sum<<endl;
-								cout<<"\tPAID  AMOUNT              $"<<paidAmt<<endl;
+								cout<<"\tTOTAL AMOUNT                       $"<<sum<<endl;
+								cout<<"\tPAID  AMOUNT                       $"<<paidAmt<<endl;
+								cout<<"\t==============================================="<<endl;
+								cout<<"\t                     THANK YOU                 "<<endl;
 								cout<<"\t==============================================="<<endl;
 								getch();
 							}
@@ -2644,8 +2680,10 @@ class project{
 									cout<<"\t"<<array[44]<<" * Fruit Cake            $"<<array[44]*100<<endl;
 								}
 								cout<<"\t==============================================="<<endl;
-								cout<<"\tTOTAL AMOUNT              $"<<sum<<endl;
-								cout<<"\tPAID  AMOUNT              $"<<paidAmt<<endl;
+								cout<<"\tTOTAL AMOUNT                       $"<<sum<<endl;
+								cout<<"\tPAID  AMOUNT                       $"<<paidAmt<<endl;
+								cout<<"\t==============================================="<<endl;
+								cout<<"\t                     THANK YOU                 "<<endl;
 								cout<<"\t==============================================="<<endl;
 								getch();
 								ofstream a;
@@ -2842,8 +2880,10 @@ class project{
 									cout<<"\t"<<array[44]<<" * Fruit Cake            $"<<array[44]*100<<endl;
 								}
 								cout<<"\t==============================================="<<endl;
-								cout<<"\tTOTAL AMOUNT              $"<<sum<<endl;
-								cout<<"\tPAID  AMOUNT              $"<<paidAmt<<endl;
+								cout<<"\tTOTAL AMOUNT                       $"<<sum<<endl;
+								cout<<"\tPAID  AMOUNT                       $"<<paidAmt<<endl;
+								cout<<"\t==============================================="<<endl;
+								cout<<"\t                     THANK YOU                 "<<endl;
 								cout<<"\t==============================================="<<endl;
 								getch();
 							}
@@ -3142,8 +3182,10 @@ class project{
 									cout<<"\t"<<array[44]<<" * Fruit Cake            $"<<array[44]*100<<endl;
 								}
 								cout<<"\t==============================================="<<endl;
-								cout<<"\tTOTAL AMOUNT              $"<<sum<<endl;
-								cout<<"\tPAID  AMOUNT              $"<<paidAmt<<endl;
+								cout<<"\tTOTAL AMOUNT                       $"<<sum<<endl;
+								cout<<"\tPAID  AMOUNT                       $"<<paidAmt<<endl;
+								cout<<"\t==============================================="<<endl;
+								cout<<"\t                     THANK YOU                 "<<endl;
 								cout<<"\t==============================================="<<endl;
 								getch();
 							}
@@ -3341,14 +3383,15 @@ class project{
 									cout<<"\t"<<array[44]<<" * Fruit Cake            $"<<array[44]*100<<endl;
 								}
 								cout<<"\t==============================================="<<endl;
-								cout<<"\tTOTAL AMOUNT              $"<<sum<<endl;
-								cout<<"\tPAID  AMOUNT              $"<<paidAmt<<endl;
+							cout<<"\tTOTAL AMOUNT                       $"<<sum<<endl;
+								cout<<"\tPAID  AMOUNT                       $"<<paidAmt<<endl;
+								cout<<"\t==============================================="<<endl;
+								cout<<"\t                     THANK YOU                 "<<endl;
 								cout<<"\t==============================================="<<endl;
 								getch();
 							}
 							else {
 								cout<<"Return amount is Rs 0";
-								getch();
 								system("cls");
 								cout<<"\t***********************************************"<<endl;
 								cout<<"\t\t\tRECEIPT"<<endl;
@@ -3534,8 +3577,10 @@ class project{
 									cout<<"\t"<<array[44]<<" * Fruit Cake            $"<<array[44]*100<<endl;
 								}
 								cout<<"\t==============================================="<<endl;
-								cout<<"\tTOTAL AMOUNT              $"<<sum<<endl;
-								cout<<"\tPAID  AMOUNT              $"<<paidAmt<<endl;
+								cout<<"\tTOTAL AMOUNT                       $"<<sum<<endl;
+								cout<<"\tPAID  AMOUNT                       $"<<paidAmt<<endl;
+								cout<<"\t==============================================="<<endl;
+								cout<<"\t                     THANK YOU                 "<<endl;
 								cout<<"\t==============================================="<<endl;
 								getch();
 							}
