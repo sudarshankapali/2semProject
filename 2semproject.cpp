@@ -3775,7 +3775,25 @@ class project{
 		}
 			case '4':
 			{
-				system("cls");
+				string pass,pass1;
+			system("cls");
+			ifstream test;
+			test.open("password.dat");
+			if(!test){
+				cout<<"Password not set. Please set the password first from view list option: ";
+				getch();
+			}
+			else{
+				cout<<"Enter old password ";
+				getline(cin,pass);
+				test>>pass1;
+				test.close();
+				if(pass1!=pass){
+					cout<<endl<<"Password is incorrect. Access Denied"<<endl;
+					getche();
+				}
+				else{
+					system("cls");
 				int deleteId;
 				cout<<"Enter student ID you want to delete: ";
 				cin>>deleteId;
@@ -3860,6 +3878,8 @@ class project{
 					cout<<"file renamed sucessfully: ";
 					getch();
 				}
+				}
+			}
 				break;
 			}
 			case '5':
