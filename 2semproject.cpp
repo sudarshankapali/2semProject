@@ -11,9 +11,10 @@ struct student{
 void view(){
 	string readAndWrite;
 	char menuChoice;
+	int searchId;
 	cout<<"\n\n\t\t\t\t\tHere are the list you can view\n";
 	system("cls");
-				cout<<"\n\t\t\t\t\t1>>Paid List\n\t\t\t\t\t2>>Liability list ";
+				cout<<"\n\t\t\t\t\t1>>Paid List\n\t\t\t\t\t2>>Liability list\n\t\t\t\t\t3>>Specific list ";
 				menuChoice=getche();
 				ifstream readData;
 				switch(menuChoice){
@@ -56,6 +57,48 @@ void view(){
 						}
 						readData.close();
 						break;
+					}
+					case '3':{/*
+						system("cls");
+						cout<<"\nEnter the ID you want to search: ";
+						cin>>searchId;
+						ifstream readFile1;
+				readFile1.open("student.dat");
+				ofstream writeFile1;
+				writeFile1.open("specific.dat");
+				while(!readFile1.eof()){
+					if(s.id==searchId){
+						writeFile1<<s.id<<"\t";
+						writeFile1<<s.bill<<"\t\t";
+						writeFile1<<s.paid<<endl;
+					}
+					else{
+						system("cls");
+						cout<<"Record not found with same ID: ";
+						getch();
+					}
+					break;
+				}
+				writeFile1.close();
+				readFile1.close();
+				ifstream readFile2;
+				readFile2.open("specific.dat");
+				if(readFile2!=NULL)
+				{
+							system("cls");
+						cout<<"ID\tBill Amount\tDue Amount";
+						while(!readFile2.eof()){
+						getline(readFile2,readAndWrite);
+						cout<<"\n---------------------------------------";
+						cout<<endl<<readAndWrite<<endl;
+						}
+						getch();
+						}
+						else{
+							system("cls");
+							cout<<"file is empty: ";
+						}
+						break;*/
 					}
 					default:
 						cout<<"\nWrong choice";
@@ -389,10 +432,10 @@ class project{
 									cout<<"\t"<<array[44]<<" * Fruit Cake            $"<<array[44]*100<<endl;
 								}
 								cout<<"\t==============================================="<<endl;
-								cout<<"\tTOTAL AMOUNT                       $"<<sum<<endl;
-								cout<<"\tPAID  AMOUNT                       $"<<paidAmt<<endl;
+								cout<<"\tTOTAL AMOUNT              $"<<sum<<endl;
+								cout<<"\tPAID  AMOUNT              $"<<paidAmt<<endl;
 								cout<<"\t==============================================="<<endl;
-								cout<<"\t                     THANK YOU                 "<<endl;
+								cout<<"\t\t\tTHANK YOU"<<endl;
 								cout<<"\t==============================================="<<endl;
 								getch();
 							}
@@ -400,6 +443,7 @@ class project{
 								amt=sum-paidAmt;
 								s.paid=amt;
 								cout<<"\nYour due amount is Rs"<<amt;
+								getch();
 								system("cls");
 								cout<<"\t***********************************************"<<endl;
 								cout<<"\t\t\tRECEIPT"<<endl;
@@ -586,10 +630,10 @@ class project{
 									cout<<"\t"<<array[44]<<" * Fruit Cake            $"<<array[44]*100<<endl;
 								}
 								cout<<"\t==============================================="<<endl;
-								cout<<"\tTOTAL AMOUNT                       $"<<sum<<endl;
-								cout<<"\tPAID  AMOUNT                       $"<<paidAmt<<endl;
+								cout<<"\tTOTAL AMOUNT              $"<<sum<<endl;
+								cout<<"\tPAID  AMOUNT              $"<<paidAmt<<endl;
 								cout<<"\t==============================================="<<endl;
-								cout<<"\t                     THANK YOU                 "<<endl;
+								cout<<"\t\t\tTHANK YOU"<<endl;
 								cout<<"\t==============================================="<<endl;
 								getch();
 								ofstream a;
@@ -600,6 +644,7 @@ class project{
 							}
 							else {
 								cout<<"Return amount is Rs 0";
+								getch();
 								system("cls");
 								cout<<"\t***********************************************"<<endl;
 								cout<<"\t\t\tRECEIPT"<<endl;
@@ -785,10 +830,10 @@ class project{
 									cout<<"\t"<<array[44]<<" * Fruit Cake            $"<<array[44]*100<<endl;
 								}
 								cout<<"\t==============================================="<<endl;
-								cout<<"\tTOTAL AMOUNT                       $"<<sum<<endl;
-								cout<<"\tPAID  AMOUNT                       $"<<paidAmt<<endl;
+								cout<<"\tTOTAL AMOUNT              $"<<sum<<endl;
+								cout<<"\tPAID  AMOUNT              $"<<paidAmt<<endl;
 								cout<<"\t==============================================="<<endl;
-								cout<<"\t                     THANK YOU                 "<<endl;
+								cout<<"\t\t\tTHANK YOU"<<endl;
 								cout<<"\t==============================================="<<endl;
 								getch();
 							}
@@ -906,6 +951,7 @@ class project{
 							if(paidAmt>sum){
 								amt=paidAmt-sum;
 								cout<<"\nReturn amount Rs"<<amt;
+								getch();
 								system("cls");
 								cout<<"\t***********************************************"<<endl;
 								cout<<"\t\t\tRECEIPT"<<endl;
@@ -1091,16 +1137,17 @@ class project{
 									cout<<"\t"<<array[44]<<" * Fruit Cake            $"<<array[44]*100<<endl;
 								}
 								cout<<"\t==============================================="<<endl;
-								cout<<"\tTOTAL AMOUNT                       $"<<sum<<endl;
-								cout<<"\tPAID  AMOUNT                       $"<<paidAmt<<endl;
+								cout<<"\tTOTAL AMOUNT              $"<<sum<<endl;
+								cout<<"\tPAID  AMOUNT              $"<<paidAmt<<endl;
 								cout<<"\t==============================================="<<endl;
-								cout<<"\t                     THANK YOU                 "<<endl;
+								cout<<"\t\t\tTHANK YOU"<<endl;
 								cout<<"\t==============================================="<<endl;
 								getch();
 							}
 							else if(paidAmt<sum){
 								amt=sum-paidAmt;
 								cout<<"\nYour due amount is Rs"<<amt;
+								getch();
 								system("cls");
 								cout<<"\t***********************************************"<<endl;
 								cout<<"\t\t\tRECEIPT"<<endl;
@@ -1286,10 +1333,10 @@ class project{
 									cout<<"\t"<<array[44]<<" * Fruit Cake            $"<<array[44]*100<<endl;
 								}
 								cout<<"\t==============================================="<<endl;
-								cout<<"\tTOTAL AMOUNT                       $"<<sum<<endl;
-								cout<<"\tPAID  AMOUNT                       $"<<paidAmt<<endl;
+								cout<<"\tTOTAL AMOUNT              $"<<sum<<endl;
+								cout<<"\tPAID  AMOUNT              $"<<paidAmt<<endl;
 								cout<<"\t==============================================="<<endl;
-								cout<<"\t                     THANK YOU                 "<<endl;
+								cout<<"\t\t\tTHANK YOU"<<endl;
 								cout<<"\t==============================================="<<endl;
 								getch();
 								ofstream a;
@@ -1300,6 +1347,7 @@ class project{
 							}
 							}else {
 								cout<<"Return amount is Rs 0";
+								getch();
 								system("cls");
 								cout<<"\t***********************************************"<<endl;
 								cout<<"\t\t\tRECEIPT"<<endl;
@@ -1485,10 +1533,10 @@ class project{
 									cout<<"\t"<<array[44]<<" * Fruit Cake            $"<<array[44]*100<<endl;
 								}
 								cout<<"\t==============================================="<<endl;
-								cout<<"\tTOTAL AMOUNT                       $"<<sum<<endl;
-								cout<<"\tPAID  AMOUNT                       $"<<paidAmt<<endl;
+								cout<<"\tTOTAL AMOUNT              $"<<sum<<endl;
+								cout<<"\tPAID  AMOUNT              $"<<paidAmt<<endl;
 								cout<<"\t==============================================="<<endl;
-								cout<<"\t                     THANK YOU                 "<<endl;
+								cout<<"\t\t\tTHANK YOU"<<endl;
 								cout<<"\t==============================================="<<endl;
 								getch();
 							}
@@ -1602,6 +1650,7 @@ class project{
 							if(paidAmt>sum){
 								amt=paidAmt-sum;
 								cout<<"\nReturn amount Rs"<<amt;
+								getch();
 								system("cls");
 								cout<<"\t***********************************************"<<endl;
 								cout<<"\t\t\tRECEIPT"<<endl;
@@ -1787,8 +1836,8 @@ class project{
 									cout<<"\t"<<array[44]<<" * Fruit Cake            $"<<array[44]*100<<endl;
 								}
 								cout<<"\t==============================================="<<endl;
-								cout<<"\tTOTAL AMOUNT                       $"<<sum<<endl;
-								cout<<"\tPAID  AMOUNT                       $"<<paidAmt<<endl;
+								cout<<"\tTOTAL AMOUNT              $"<<sum<<endl;
+								cout<<"\tPAID  AMOUNT              $"<<paidAmt<<endl;
 								cout<<"\t==============================================="<<endl;
 								cout<<"\t                     THANK YOU                 "<<endl;
 								cout<<"\t==============================================="<<endl;
@@ -1797,6 +1846,7 @@ class project{
 							else if(paidAmt<sum){
 								amt=sum-paidAmt;
 								cout<<"\nYour due amount is Rs"<<amt;
+								getch();
 								system("cls");
 								cout<<"\t***********************************************"<<endl;
 								cout<<"\t\t\tRECEIPT"<<endl;
@@ -1982,10 +2032,10 @@ class project{
 									cout<<"\t"<<array[44]<<" * Fruit Cake            $"<<array[44]*100<<endl;
 								}
 								cout<<"\t==============================================="<<endl;
-								cout<<"\tTOTAL AMOUNT                       $"<<sum<<endl;
-								cout<<"\tPAID  AMOUNT                       $"<<paidAmt<<endl;
+								cout<<"\tTOTAL AMOUNT              $"<<sum<<endl;
+								cout<<"\tPAID  AMOUNT              $"<<paidAmt<<endl;
 								cout<<"\t==============================================="<<endl;
-								cout<<"\t                     THANK YOU                 "<<endl;
+								cout<<"\t\t\tTHANK YOU"<<endl;
 								cout<<"\t==============================================="<<endl;
 								getch();
 								ofstream a;
@@ -1997,6 +2047,7 @@ class project{
 							}
 							else {
 								cout<<"Return amount is Rs 0";
+								getch();
 								system("cls");
 								cout<<"\t***********************************************"<<endl;
 								cout<<"\t\t\tRECEIPT"<<endl;
@@ -2182,10 +2233,10 @@ class project{
 									cout<<"\t"<<array[44]<<" * Fruit Cake            $"<<array[44]*100<<endl;
 								}
 								cout<<"\t==============================================="<<endl;
-								cout<<"\tTOTAL AMOUNT                       $"<<sum<<endl;
-								cout<<"\tPAID  AMOUNT                       $"<<paidAmt<<endl;
+								cout<<"\tTOTAL AMOUNT              $"<<sum<<endl;
+								cout<<"\tPAID  AMOUNT              $"<<paidAmt<<endl;
 								cout<<"\t==============================================="<<endl;
-								cout<<"\t                     THANK YOU                 "<<endl;
+								cout<<"\t\t\tTHANK YOU"<<endl;
 								cout<<"\t==============================================="<<endl;
 								getch();
 							}
@@ -2300,6 +2351,7 @@ class project{
 							if(paidAmt>sum){
 								amt=paidAmt-sum;
 								cout<<"\nReturn amount Rs"<<amt;
+								getch();
 								system("cls");
 								cout<<"\t***********************************************"<<endl;
 								cout<<"\t\t\tRECEIPT"<<endl;
@@ -2485,16 +2537,17 @@ class project{
 									cout<<"\t"<<array[44]<<" * Fruit Cake            $"<<array[44]*100<<endl;
 								}
 								cout<<"\t==============================================="<<endl;
-								cout<<"\tTOTAL AMOUNT                       $"<<sum<<endl;
-								cout<<"\tPAID  AMOUNT                       $"<<paidAmt<<endl;
+								cout<<"\tTOTAL AMOUNT              $"<<sum<<endl;
+								cout<<"\tPAID  AMOUNT              $"<<paidAmt<<endl;
 								cout<<"\t==============================================="<<endl;
-								cout<<"\t                     THANK YOU                 "<<endl;
+								cout<<"\t\t\tTHANK YOU"<<endl;
 								cout<<"\t==============================================="<<endl;
 								getch();
 							}
 							else if(paidAmt<sum){
 								amt=sum-paidAmt;
 								cout<<"\nYour due amount is Rs"<<amt;
+								getch();
 								system("cls");
 								cout<<"\t***********************************************"<<endl;
 								cout<<"\t\t\tRECEIPT"<<endl;
@@ -2680,10 +2733,10 @@ class project{
 									cout<<"\t"<<array[44]<<" * Fruit Cake            $"<<array[44]*100<<endl;
 								}
 								cout<<"\t==============================================="<<endl;
-								cout<<"\tTOTAL AMOUNT                       $"<<sum<<endl;
-								cout<<"\tPAID  AMOUNT                       $"<<paidAmt<<endl;
+								cout<<"\tTOTAL AMOUNT              $"<<sum<<endl;
+								cout<<"\tPAID  AMOUNT              $"<<paidAmt<<endl;
 								cout<<"\t==============================================="<<endl;
-								cout<<"\t                     THANK YOU                 "<<endl;
+								cout<<"\t\t\tTHANK YOU"<<endl;
 								cout<<"\t==============================================="<<endl;
 								getch();
 								ofstream a;
@@ -2695,6 +2748,7 @@ class project{
 							}
 							else {
 								cout<<"Return amount is Rs 0";
+								getch();
 								system("cls");
 								cout<<"\t***********************************************"<<endl;
 								cout<<"\t\t\tRECEIPT"<<endl;
@@ -2880,10 +2934,10 @@ class project{
 									cout<<"\t"<<array[44]<<" * Fruit Cake            $"<<array[44]*100<<endl;
 								}
 								cout<<"\t==============================================="<<endl;
-								cout<<"\tTOTAL AMOUNT                       $"<<sum<<endl;
-								cout<<"\tPAID  AMOUNT                       $"<<paidAmt<<endl;
+								cout<<"\tTOTAL AMOUNT              $"<<sum<<endl;
+								cout<<"\tPAID  AMOUNT              $"<<paidAmt<<endl;
 								cout<<"\t==============================================="<<endl;
-								cout<<"\t                     THANK YOU                 "<<endl;
+								cout<<"\t\t\tTHANK YOU"<<endl;
 								cout<<"\t==============================================="<<endl;
 								getch();
 							}
@@ -2894,6 +2948,7 @@ class project{
 					}
 					else {
 						cout<<"wrong input";
+						getch();
 					}
 					fflush(stdin);
 						break;
@@ -2997,6 +3052,7 @@ class project{
 							if(paidAmt>sum){
 								amt=paidAmt-sum;
 								cout<<"\nReturn amount Rs"<<amt;
+								getch();
 								system("cls");
 								cout<<"\t***********************************************"<<endl;
 								cout<<"\t\t\tRECEIPT"<<endl;
@@ -3182,16 +3238,17 @@ class project{
 									cout<<"\t"<<array[44]<<" * Fruit Cake            $"<<array[44]*100<<endl;
 								}
 								cout<<"\t==============================================="<<endl;
-								cout<<"\tTOTAL AMOUNT                       $"<<sum<<endl;
-								cout<<"\tPAID  AMOUNT                       $"<<paidAmt<<endl;
+								cout<<"\tTOTAL AMOUNT              $"<<sum<<endl;
+								cout<<"\tPAID  AMOUNT              $"<<paidAmt<<endl;
 								cout<<"\t==============================================="<<endl;
-								cout<<"\t                     THANK YOU                 "<<endl;
+								cout<<"\t\t\tTHANK YOU"<<endl;
 								cout<<"\t==============================================="<<endl;
 								getch();
 							}
 							else if(paidAmt<sum){
 								amt=sum-paidAmt;
 								cout<<"\nYour due amount is Rs"<<amt;
+								getch();
 								ofstream a;
 								s.paid=amt;
 								a.open("liability.dat", ios :: app);{
@@ -3383,15 +3440,16 @@ class project{
 									cout<<"\t"<<array[44]<<" * Fruit Cake            $"<<array[44]*100<<endl;
 								}
 								cout<<"\t==============================================="<<endl;
-							cout<<"\tTOTAL AMOUNT                       $"<<sum<<endl;
-								cout<<"\tPAID  AMOUNT                       $"<<paidAmt<<endl;
+								cout<<"\tTOTAL AMOUNT              $"<<sum<<endl;
+								cout<<"\tPAID  AMOUNT              $"<<paidAmt<<endl;
 								cout<<"\t==============================================="<<endl;
-								cout<<"\t                     THANK YOU                 "<<endl;
+								cout<<"\t\t\tTHANK YOU"<<endl;
 								cout<<"\t==============================================="<<endl;
 								getch();
 							}
 							else {
 								cout<<"Return amount is Rs 0";
+								getch();
 								system("cls");
 								cout<<"\t***********************************************"<<endl;
 								cout<<"\t\t\tRECEIPT"<<endl;
@@ -3577,10 +3635,10 @@ class project{
 									cout<<"\t"<<array[44]<<" * Fruit Cake            $"<<array[44]*100<<endl;
 								}
 								cout<<"\t==============================================="<<endl;
-								cout<<"\tTOTAL AMOUNT                       $"<<sum<<endl;
-								cout<<"\tPAID  AMOUNT                       $"<<paidAmt<<endl;
+								cout<<"\tTOTAL AMOUNT              $"<<sum<<endl;
+								cout<<"\tPAID  AMOUNT              $"<<paidAmt<<endl;
 								cout<<"\t==============================================="<<endl;
-								cout<<"\t                     THANK YOU                 "<<endl;
+								cout<<"\t\t\tTHANK YOU"<<endl;
 								cout<<"\t==============================================="<<endl;
 								getch();
 							}
@@ -3717,29 +3775,92 @@ class project{
 		}
 			case '4':
 			{
-			/*	system("cls");
+				system("cls");
 				int deleteId;
 				cout<<"Enter student ID you want to delete: ";
 				cin>>deleteId;
-				fflush(stdin);
-				ifstream d;
-				d.open("liability.dat");
-				ofstream e;
-				e.open("new.dat");
-					while(!d.eof()){
-						 if(s.id==deleteId){
-						 	continue;
-						 }
-						 else{
-						 	e<<s.id<<"\t"<<s.bill<<"\t\t"<<s.paid<<endl;
-						 }
+				ifstream readFile;
+				readFile.open("liability.dat");
+				ofstream writeFile;
+				readFile>>s.id;
+				readFile>>s.bill;
+				readFile>>s.paid;
+				writeFile.open("new.dat");
+				while(!readFile.eof()){
+					if(s.id!=deleteId){
+						writeFile<<s.id<<"\t";
+						writeFile<<s.bill<<"\t\t";
+						writeFile<<s.paid<<endl;
 					}
-					cout<<"Record deleted";
-					e.close();
-					d.close();
-					remove("liability.dat");
-					rename("new.dat","liability.dat");
-								break;*/
+					else{
+						system("cls");
+						cout<<"Record deleted from Liability list sucessfully: ";
+						getch();
+					}
+					
+					readFile>>s.id;
+					readFile>>s.bill;
+					readFile>>s.paid;
+				}
+				writeFile.close();
+				readFile.close();
+				if(remove("liability.dat")!=0){
+					cout<<"Could not remove file: ";
+					getch();
+				}
+				else{
+					system("cls");
+					cout<<"File removed sucessfully: \n";
+				}
+				if(rename("new.dat","liability.dat")!=0){
+					cout<<"Could not rename file: ";
+					getch();
+				}
+				else{
+					cout<<"File renamed sucessfully: ";
+					getch();
+				}
+				ifstream readFile1;
+				readFile1.open("student.dat");
+				ofstream writeFile1;
+				readFile1>>s.id;
+				readFile1>>s.bill;
+				readFile1>>s.paid;
+				writeFile1.open("new1.dat");
+				while(!readFile1.eof()){
+					if(s.id!=deleteId){
+						writeFile1<<s.id<<"\t";
+						writeFile1<<s.bill<<"\t\t";
+						writeFile1<<s.paid<<endl;
+					}
+					else{
+						system("cls");
+						cout<<"Record deleted sucessfully: ";
+						getch();
+					}
+					readFile1>>s.id;
+					readFile1>>s.bill;
+					readFile1>>s.paid;
+				}
+				writeFile1.close();
+				readFile1.close();
+				if(remove("student.dat")!=0){
+					cout<<"Could not remove file: ";
+					getch();
+				}
+				else{
+					system("cls");
+					cout<<"File removed sucessfully: ";
+				}
+				if(rename("new1.dat","student.dat")!=0){
+					cout<<"could not rename file: ";
+					getch();
+				}
+				else{
+					cout<<"file renamed sucessfully: ";
+					getch();
+				}
+				break;
 			}
 			case '5':
 			exit(0);
