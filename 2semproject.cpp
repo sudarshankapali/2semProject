@@ -1,14 +1,211 @@
 #include<iostream>
-#include<stdlib.h>
-#include<fstream>
 #include<windows.h>
 #include<conio.h>
+#include<stdlib.h>
+#include<fstream>
 using namespace std;
 struct student{
 	int id;
 	int bill,paid;
 }s;
-void view(){
+void printReceipt(int a[],int size,int s,int p){
+	int array[45],k=0,total,paidAmt;
+	for(k=0;k<size;k++){
+		array[k]=a[k];
+	}
+	system("cls");
+								cout<<"\t***********************************************"<<endl;
+								cout<<"\t\t\tRECEIPT"<<endl;
+								cout<<"\t***********************************************"<<endl;
+								if(array[0]>=1)
+								{
+									cout<<"\t"<<array[0]<<" * Gralic Potato          $"<<array[0]*60<<endl;
+								}
+								if(array[1]>=1)
+								{
+									cout<<"\t"<<array[1]<<" * Veg Chowmin            $"<<array[1]*50<<endl;
+								}
+								if(array[2]>=1)
+								{
+									cout<<"\t"<<array[2]<<" * Veg Momo               $"<<array[2]*60<<endl;
+								}
+								if(array[3]>=1)
+								{
+									cout<<"\t"<<array[3]<<" * Potato Chips           $"<<array[3]*50<<endl;
+								}
+								if(array[4]>=1)
+								{
+									cout<<"\t"<<array[4]<<" * Burger                 $"<<array[4]*90<<endl;
+								}
+								if(array[5]>=1)
+								{
+									cout<<"\t"<<array[5]<<" * Sandwitch              $"<<array[5]*70<<endl;
+								}
+								if(array[6]>=1)
+								{
+									cout<<"\t"<<array[6]<<" * Puri Tarkari           $"<<array[6]*80<<endl;
+								}
+								if(array[7]>=1)
+								{
+									cout<<"\t"<<array[7]<<" * Alu Paratha            $"<<array[7]*60<<endl;
+								}
+								if(array[8]>=1)
+								{
+									cout<<"\t"<<array[8]<<" * Frentch Fry            $"<<array[8]*60<<endl;
+								}
+								if(array[9]>=1)
+								{
+									cout<<"\t"<<array[9]<<" * Chicken Momo           $"<<array[9]*90<<endl;
+								}
+								if(array[10]>=1)
+								{
+									cout<<"\t"<<array[10]<<" * Chicken Chowmein      $"<<array[10]*80<<endl;
+								}
+								if(array[11]>=1)
+								{
+									cout<<"\t"<<array[11]<<" * Chicken Burger        $"<<array[11]*70<<endl;
+								}
+								if(array[12]>=1)
+								{
+									cout<<"\t"<<array[12]<<" * Chicken Biriyani      $"<<array[12]*100<<endl;
+								}
+								if(array[13]>=1)
+								{
+									cout<<"\t"<<array[13]<<" * Buff Momo             $"<<array[13]*70<<endl;
+								}
+								if(array[14]>=1)
+								{
+									cout<<"\t"<<array[14]<<" * Pork Momo             $"<<array[14]*70<<endl;
+								}
+								if(array[15]>=1)
+								{
+									cout<<"\t"<<array[15]<<" * Buff/Chicken Sausage  $"<<array[15]*300<<endl;
+								}
+								if(array[16]>=1)
+								{
+									cout<<"\t"<<array[16]<<" * Egg Kattiroll         $"<<array[16]*120<<endl;
+								}
+								if(array[17]>=1)
+								{
+									cout<<"\t"<<array[17]<<" * Chicken Kattiroll     $"<<array[17]*150<<endl;
+								}
+								if(array[18]>=1)
+								{
+									cout<<"\t"<<array[18]<<" * Coffee                $"<<array[18]*50<<endl;
+								}
+								if(array[19]>=1)
+								{
+									cout<<"\t"<<array[19]<<" * Cold Drinks           $"<<array[19]*40<<endl;
+								}
+								if(array[20]>=1)
+								{
+									cout<<"\t"<<array[20]<<" * Milk Tea              $"<<array[20]*25<<endl;
+								}
+								if(array[21]>=1)
+								{
+									cout<<"\t"<<array[21]<<" * Fruit Juice           $"<<array[21]*35<<endl;
+								}
+								if(array[22]>=1)
+								{
+									cout<<"\t"<<array[22]<<" * Chocolate Milk        $"<<array[22]*30<<endl;
+								}
+								if(array[23]>=1)
+								{
+									cout<<"\t"<<array[23]<<" * Capuccino             $"<<array[23]*50<<endl;
+								}
+								if(array[24]>=1)
+								{
+									cout<<"\t"<<array[24]<<" * Americano             $"<<array[24]*60<<endl;
+								}
+								if(array[25]>=1)
+								{
+									cout<<"\t"<<array[25]<<" * Espresso              $"<<array[25]*50<<endl;
+								}
+								if(array[26]>=1)
+								{
+									cout<<"\t"<<array[26]<<" * Latte                 $"<<array[26]*80<<endl;
+								}
+								if(array[27]>=1)
+								{
+									cout<<"\t"<<array[27]<<" * Chatpate              $"<<array[27]*50<<endl;
+								}
+								if(array[28]>=1)
+								{
+									cout<<"\t"<<array[28]<<" * Pop Corn              $"<<array[28]*50<<endl;
+								}
+								if(array[29]>=1)
+								{
+									cout<<"\t"<<array[29]<<" * Fruit Salad           $"<<array[29]*65<<endl;
+								}
+								if(array[30]>=1)
+								{
+									cout<<"\t"<<array[30]<<" * Jelly Cup with Fruit  $"<<array[30]*75<<endl;
+								}
+								if(array[31]>=1)
+								{
+									cout<<"\t"<<array[31]<<" * Cookies               $"<<array[31]*60<<endl;
+								}
+								if(array[32]>=1)
+								{
+									cout<<"\t"<<array[32]<<" * Muffins               $"<<array[32]*50<<endl;
+								}
+								if(array[33]>=1)
+								{
+									cout<<"\t"<<array[33]<<" * Chips                 $"<<array[33]*40<<endl;
+								}
+								if(array[34]>=1)
+								{
+									cout<<"\t"<<array[34]<<" * Current Noodles       $"<<array[34]*60<<endl;
+								}
+								if(array[35]>=1)
+								{
+									cout<<"\t"<<array[35]<<" * Nimkin/Dalmot         $"<<array[35]*40<<endl;
+								}
+								if(array[36]>=1)
+								{
+									cout<<"\t"<<array[36]<<" * Ice Cream             $"<<array[36]*70<<endl;
+								}
+								if(array[37]>=1)
+								{
+									cout<<"\t"<<array[37]<<" * Black/White Forest    $"<<array[37]*90<<endl;
+								}
+								if(array[38]>=1)
+								{
+									cout<<"\t"<<array[38]<<" * Waffle                $"<<array[38]*75<<endl;
+								}
+								if(array[39]>=1)
+								{
+									cout<<"\t"<<array[39]<<" * Cream Doughnut        $"<<array[39]*50<<endl;
+								}
+								if(array[40]>=1)
+								{
+									cout<<"\t"<<array[40]<<" * Fruit Pie             $"<<array[40]*60<<endl;
+								}
+								if(array[41]>=1)
+								{
+									cout<<"\t"<<array[41]<<" * Stawberry Sundae      $"<<array[41]*80<<endl;
+								}
+								if(array[42]>=1)
+								{
+									cout<<"\t"<<array[42]<<" * Pastry                $"<<array[42]*60<<endl;
+								}
+								if(array[43]>=1)
+								{
+									cout<<"\t"<<array[43]<<" * Peanut Butter Bread   $"<<array[43]*90<<endl;
+								}
+								if(array[44]>=1)
+								{
+									cout<<"\t"<<array[44]<<" * Fruit Cake            $"<<array[44]*100<<endl;
+								}
+								cout<<"\t==============================================="<<endl;
+								cout<<"\tTOTAL AMOUNT              $"<<s<<endl;
+								cout<<"\tPAID  AMOUNT              $"<<p<<endl;
+								cout<<"\t==============================================="<<endl;
+								cout<<"\t\t\tTHANK YOU"<<endl;
+								cout<<"\t==============================================="<<endl;
+								getch();
+}
+view(){
 	string readAndWrite;
 	char menuChoice;
 	int searchId;
@@ -105,37 +302,21 @@ void view(){
 						break;
 				}
 }
-class project{
-	int sum,order1,ID,paidAmt,amt,temp,array[45],i;
+class food{
+	int order1,ID,paidAmt,amt,temp,array[45],sum;
+	int i;
 	char menuChoice0,next,another;
-	char menuChoice;
+	
 	public:
-	project(){
+		food(){
 		temp=0;
 	}
-	void menu(){
-		while(1){
-			{
-				for(i=0;i<45;i++)
-				{
-					array[i]=temp;
-				}
-				sum=temp;
-				system("cls");
-			cout<<"\n\t\t\t\t\t\t*..........................*\n";
-			cout<<"\t\t\t\t\t\t\tKIST CAFETERIA\n";					
-			cout<<"\n\n\n\n\n\n\n\t\t\t\t\t\tWe have following menu:\n\n";
-			cout<<"\t\t\t\t\t\t1. Food and Drinks\n";
-			cout<<"\t\t\t\t\t\t2. View List\n";
-			cout<<"\t\t\t\t\t\t3. Change Password\n";
-			cout<<"\t\t\t\t\t\t4. Delete record\n";
-			cout<<"\t\t\t\t\t\t5. Exit\n";
-			cout<<"\t\t\t\t\t\tChoose from the above list: ";
-			menuChoice=getche();
-			switch(menuChoice)
-			{
-				case '1':
-				{
+		
+		void menu1(){
+			sum=temp;
+			for(i=0;i<45;i++){
+			array[i]=temp;
+			}
 					start:
 			system("cls");
 				cout<<"\n\n\n\n\n\n\n\t\t\t\t\t\tEnter your food category\n";
@@ -247,395 +428,14 @@ class project{
 								amt=paidAmt-sum;
 								cout<<"\nReturn amount Rs"<<amt;
 								getch();
-								system("cls");
-								cout<<"\t***********************************************"<<endl;
-								cout<<"\t\t\tRECEIPT"<<endl;
-								cout<<"\t***********************************************"<<endl;
-								if(array[0]>=1)
-								{
-									cout<<"\t"<<array[0]<<" * Gralic Potato          $"<<array[0]*60<<endl;
-								}
-								if(array[1]>=1)
-								{
-									cout<<"\t"<<array[1]<<" * Veg Chowmin            $"<<array[1]*50<<endl;
-								}
-								if(array[2]>=1)
-								{
-									cout<<"\t"<<array[2]<<" * Veg Momo               $"<<array[2]*60<<endl;
-								}
-								if(array[3]>=1)
-								{
-									cout<<"\t"<<array[3]<<" * Potato Chips           $"<<array[3]*50<<endl;
-								}
-								if(array[4]>=1)
-								{
-									cout<<"\t"<<array[4]<<" * Burger                 $"<<array[4]*90<<endl;
-								}
-								if(array[5]>=1)
-								{
-									cout<<"\t"<<array[5]<<" * Sandwitch              $"<<array[5]*70<<endl;
-								}
-								if(array[6]>=1)
-								{
-									cout<<"\t"<<array[6]<<" * Puri Tarkari           $"<<array[6]*80<<endl;
-								}
-								if(array[7]>=1)
-								{
-									cout<<"\t"<<array[7]<<" * Alu Paratha            $"<<array[7]*60<<endl;
-								}
-								if(array[8]>=1)
-								{
-									cout<<"\t"<<array[8]<<" * Frentch Fry            $"<<array[8]*60<<endl;
-								}
-								if(array[9]>=1)
-								{
-									cout<<"\t"<<array[9]<<" * Chicken Momo           $"<<array[9]*90<<endl;
-								}
-								if(array[10]>=1)
-								{
-									cout<<"\t"<<array[10]<<" * Chicken Chowmein      $"<<array[10]*80<<endl;
-								}
-								if(array[11]>=1)
-								{
-									cout<<"\t"<<array[11]<<" * Chicken Burger        $"<<array[11]*70<<endl;
-								}
-								if(array[12]>=1)
-								{
-									cout<<"\t"<<array[12]<<" * Chicken Biriyani      $"<<array[12]*100<<endl;
-								}
-								if(array[13]>=1)
-								{
-									cout<<"\t"<<array[13]<<" * Buff Momo             $"<<array[13]*70<<endl;
-								}
-								if(array[14]>=1)
-								{
-									cout<<"\t"<<array[14]<<" * Pork Momo             $"<<array[14]*70<<endl;
-								}
-								if(array[15]>=1)
-								{
-									cout<<"\t"<<array[15]<<" * Buff/Chicken Sausage  $"<<array[15]*300<<endl;
-								}
-								if(array[16]>=1)
-								{
-									cout<<"\t"<<array[16]<<" * Egg Kattiroll         $"<<array[16]*120<<endl;
-								}
-								if(array[17]>=1)
-								{
-									cout<<"\t"<<array[17]<<" * Chicken Kattiroll     $"<<array[17]*150<<endl;
-								}
-								if(array[18]>=1)
-								{
-									cout<<"\t"<<array[18]<<" * Coffee                $"<<array[18]*50<<endl;
-								}
-								if(array[19]>=1)
-								{
-									cout<<"\t"<<array[19]<<" * Cold Drinks           $"<<array[19]*40<<endl;
-								}
-								if(array[20]>=1)
-								{
-									cout<<"\t"<<array[20]<<" * Milk Tea              $"<<array[20]*25<<endl;
-								}
-								if(array[21]>=1)
-								{
-									cout<<"\t"<<array[21]<<" * Fruit Juice           $"<<array[21]*35<<endl;
-								}
-								if(array[22]>=1)
-								{
-									cout<<"\t"<<array[22]<<" * Chocolate Milk        $"<<array[22]*30<<endl;
-								}
-								if(array[23]>=1)
-								{
-									cout<<"\t"<<array[23]<<" * Capuccino             $"<<array[23]*50<<endl;
-								}
-								if(array[24]>=1)
-								{
-									cout<<"\t"<<array[24]<<" * Americano             $"<<array[24]*60<<endl;
-								}
-								if(array[25]>=1)
-								{
-									cout<<"\t"<<array[25]<<" * Espresso              $"<<array[25]*50<<endl;
-								}
-								if(array[26]>=1)
-								{
-									cout<<"\t"<<array[26]<<" * Latte                 $"<<array[26]*80<<endl;
-								}
-								if(array[27]>=1)
-								{
-									cout<<"\t"<<array[27]<<" * Chatpate              $"<<array[27]*50<<endl;
-								}
-								if(array[28]>=1)
-								{
-									cout<<"\t"<<array[28]<<" * Pop Corn              $"<<array[28]*50<<endl;
-								}
-								if(array[29]>=1)
-								{
-									cout<<"\t"<<array[29]<<" * Fruit Salad           $"<<array[29]*65<<endl;
-								}
-								if(array[30]>=1)
-								{
-									cout<<"\t"<<array[30]<<" * Jelly Cup with Fruit  $"<<array[30]*75<<endl;
-								}
-								if(array[31]>=1)
-								{
-									cout<<"\t"<<array[31]<<" * Cookies               $"<<array[31]*60<<endl;
-								}
-								if(array[32]>=1)
-								{
-									cout<<"\t"<<array[32]<<" * Muffins               $"<<array[32]*50<<endl;
-								}
-								if(array[33]>=1)
-								{
-									cout<<"\t"<<array[33]<<" * Chips                 $"<<array[33]*40<<endl;
-								}
-								if(array[34]>=1)
-								{
-									cout<<"\t"<<array[34]<<" * Current Noodles       $"<<array[34]*60<<endl;
-								}
-								if(array[35]>=1)
-								{
-									cout<<"\t"<<array[35]<<" * Nimkin/Dalmot         $"<<array[35]*40<<endl;
-								}
-								if(array[36]>=1)
-								{
-									cout<<"\t"<<array[36]<<" * Ice Cream             $"<<array[36]*70<<endl;
-								}
-								if(array[37]>=1)
-								{
-									cout<<"\t"<<array[37]<<" * Black/White Forest    $"<<array[37]*90<<endl;
-								}
-								if(array[38]>=1)
-								{
-									cout<<"\t"<<array[38]<<" * Waffle                $"<<array[38]*75<<endl;
-								}
-								if(array[39]>=1)
-								{
-									cout<<"\t"<<array[39]<<" * Cream Doughnut        $"<<array[39]*50<<endl;
-								}
-								if(array[40]>=1)
-								{
-									cout<<"\t"<<array[40]<<" * Fruit Pie             $"<<array[40]*60<<endl;
-								}
-								if(array[41]>=1)
-								{
-									cout<<"\t"<<array[41]<<" * Stawberry Sundae      $"<<array[41]*80<<endl;
-								}
-								if(array[42]>=1)
-								{
-									cout<<"\t"<<array[42]<<" * Pastry                $"<<array[42]*60<<endl;
-								}
-								if(array[43]>=1)
-								{
-									cout<<"\t"<<array[43]<<" * Peanut Butter Bread   $"<<array[43]*90<<endl;
-								}
-								if(array[44]>=1)
-								{
-									cout<<"\t"<<array[44]<<" * Fruit Cake            $"<<array[44]*100<<endl;
-								}
-								cout<<"\t==============================================="<<endl;
-								cout<<"\tTOTAL AMOUNT              $"<<sum<<endl;
-								cout<<"\tPAID  AMOUNT              $"<<paidAmt<<endl;
-								cout<<"\t==============================================="<<endl;
-								cout<<"\t\t\tTHANK YOU"<<endl;
-								cout<<"\t==============================================="<<endl;
-								getch();
+								printReceipt(array,45,sum,paidAmt);
 							}
 							else if(paidAmt<sum){
 								amt=sum-paidAmt;
 								s.paid=amt;
 								cout<<"\nYour due amount is Rs"<<amt;
 								getch();
-								system("cls");
-								cout<<"\t***********************************************"<<endl;
-								cout<<"\t\t\tRECEIPT"<<endl;
-								cout<<"\t***********************************************"<<endl;
-								if(array[0]>=1)
-								{
-									
-									cout<<"\t"<<array[0]<<" * Gralic Potato          $"<<array[0]*60<<endl;
-								}
-								if(array[1]>=1)
-								{
-									cout<<"\t"<<array[1]<<" * Veg Chowmin            $"<<array[1]*50<<endl;
-								}
-								if(array[2]>=1)
-								{
-									cout<<"\t"<<array[2]<<" * Veg Momo               $"<<array[2]*60<<endl;
-								}
-								if(array[3]>=1)
-								{
-									cout<<"\t"<<array[3]<<" * Potato Chips           $"<<array[3]*50<<endl;
-								}
-								if(array[4]>=1)
-								{
-									cout<<"\t"<<array[4]<<" * Burger                 $"<<array[4]*90<<endl;
-								}
-								if(array[5]>=1)
-								{
-									cout<<"\t"<<array[5]<<" * Sandwitch              $"<<array[5]*70<<endl;
-								}
-								if(array[6]>=1)
-								{
-									cout<<"\t"<<array[6]<<" * Puri Tarkari           $"<<array[6]*80<<endl;
-								}
-								if(array[7]>=1)
-								{
-									cout<<"\t"<<array[7]<<" * Alu Paratha            $"<<array[7]*60<<endl;
-								}
-								if(array[8]>=1)
-								{
-									cout<<"\t"<<array[8]<<" * Frentch Fry            $"<<array[8]*60<<endl;
-								}
-								if(array[9]>=1)
-								{
-									cout<<"\t"<<array[9]<<" * Chicken Momo           $"<<array[9]*90<<endl;
-								}
-								if(array[10]>=1)
-								{
-									cout<<"\t"<<array[10]<<" * Chicken Chowmein      $"<<array[10]*80<<endl;
-								}
-								if(array[11]>=1)
-								{
-									cout<<"\t"<<array[11]<<" * Chicken Burger        $"<<array[11]*70<<endl;
-								}
-								if(array[12]>=1)
-								{
-									cout<<"\t"<<array[12]<<" * Chicken Biriyani      $"<<array[12]*100<<endl;
-								}
-								if(array[13]>=1)
-								{
-									cout<<"\t"<<array[13]<<" * Buff Momo             $"<<array[13]*70<<endl;
-								}
-								if(array[14]>=1)
-								{
-									cout<<"\t"<<array[14]<<" * Pork Momo             $"<<array[14]*70<<endl;
-								}
-								if(array[15]>=1)
-								{
-									cout<<"\t"<<array[15]<<" * Buff/Chicken Sausage  $"<<array[15]*300<<endl;
-								}
-								if(array[16]>=1)
-								{
-									cout<<"\t"<<array[16]<<" * Egg Kattiroll         $"<<array[16]*120<<endl;
-								}
-								if(array[17]>=1)
-								{
-									cout<<"\t"<<array[17]<<" * Chicken Kattiroll     $"<<array[17]*150<<endl;
-								}
-								if(array[18]>=1)
-								{
-									cout<<"\t"<<array[18]<<" * Coffee                $"<<array[18]*50<<endl;
-								}
-								if(array[19]>=1)
-								{
-									cout<<"\t"<<array[19]<<" * Cold Drinks           $"<<array[19]*40<<endl;
-								}
-								if(array[20]>=1)
-								{
-									cout<<"\t"<<array[20]<<" * Milk Tea              $"<<array[20]*25<<endl;
-								}
-								if(array[21]>=1)
-								{
-									cout<<"\t"<<array[21]<<" * Fruit Juice           $"<<array[21]*35<<endl;
-								}
-								if(array[22]>=1)
-								{
-									cout<<"\t"<<array[22]<<" * Chocolate Milk        $"<<array[22]*30<<endl;
-								}
-								if(array[23]>=1)
-								{
-									cout<<"\t"<<array[23]<<" * Capuccino             $"<<array[23]*50<<endl;
-								}
-								if(array[24]>=1)
-								{
-									cout<<"\t"<<array[24]<<" * Americano             $"<<array[24]*60<<endl;
-								}
-								if(array[25]>=1)
-								{
-									cout<<"\t"<<array[25]<<" * Espresso              $"<<array[25]*50<<endl;
-								}
-								if(array[26]>=1)
-								{
-									cout<<"\t"<<array[26]<<" * Latte                 $"<<array[26]*80<<endl;
-								}
-								if(array[27]>=1)
-								{
-									cout<<"\t"<<array[27]<<" * Chatpate              $"<<array[27]*50<<endl;
-								}
-								if(array[28]>=1)
-								{
-									cout<<"\t"<<array[28]<<" * Pop Corn              $"<<array[28]*50<<endl;
-								}
-								if(array[29]>=1)
-								{
-									cout<<"\t"<<array[29]<<" * Fruit Salad           $"<<array[29]*65<<endl;
-								}
-								if(array[30]>=1)
-								{
-									cout<<"\t"<<array[30]<<" * Jelly Cup with Fruit  $"<<array[30]*75<<endl;
-								}
-								if(array[31]>=1)
-								{
-									cout<<"\t"<<array[31]<<" * Cookies               $"<<array[31]*60<<endl;
-								}
-								if(array[32]>=1)
-								{
-									cout<<"\t"<<array[32]<<" * Muffins               $"<<array[32]*50<<endl;
-								}
-								if(array[33]>=1)
-								{
-									cout<<"\t"<<array[33]<<" * Chips                 $"<<array[33]*40<<endl;
-								}
-								if(array[34]>=1)
-								{
-									cout<<"\t"<<array[34]<<" * Current Noodles       $"<<array[34]*60<<endl;
-								}
-								if(array[35]>=1)
-								{
-									cout<<"\t"<<array[35]<<" * Nimkin/Dalmot         $"<<array[35]*40<<endl;
-								}
-								if(array[36]>=1)
-								{
-									cout<<"\t"<<array[36]<<" * Ice Cream             $"<<array[36]*70<<endl;
-								}
-								if(array[37]>=1)
-								{
-									cout<<"\t"<<array[37]<<" * Black/White Forest    $"<<array[37]*90<<endl;
-								}
-								if(array[38]>=1)
-								{
-									cout<<"\t"<<array[38]<<" * Waffle                $"<<array[38]*75<<endl;
-								}
-								if(array[39]>=1)
-								{
-									cout<<"\t"<<array[39]<<" * Cream Doughnut        $"<<array[39]*50<<endl;
-								}
-								if(array[40]>=1)
-								{
-									cout<<"\t"<<array[40]<<" * Fruit Pie             $"<<array[40]*60<<endl;
-								}
-								if(array[41]>=1)
-								{
-									cout<<"\t"<<array[41]<<" * Stawberry Sundae      $"<<array[41]*80<<endl;
-								}
-								if(array[42]>=1)
-								{
-									cout<<"\t"<<array[42]<<" * Pastry                $"<<array[42]*60<<endl;
-								}
-								if(array[43]>=1)
-								{
-									cout<<"\t"<<array[43]<<" * Peanut Butter Bread   $"<<array[43]*90<<endl;
-								}
-								if(array[44]>=1)
-								{
-									cout<<"\t"<<array[44]<<" * Fruit Cake            $"<<array[44]*100<<endl;
-								}
-								cout<<"\t==============================================="<<endl;
-								cout<<"\tTOTAL AMOUNT              $"<<sum<<endl;
-								cout<<"\tPAID  AMOUNT              $"<<paidAmt<<endl;
-								cout<<"\t==============================================="<<endl;
-								cout<<"\t\t\tTHANK YOU"<<endl;
-								cout<<"\t==============================================="<<endl;
-								getch();
+								printReceipt(array,45,sum,paidAmt);
 								ofstream a;
 								a.open("liability.dat", ios :: app);{
 									a<<s.id<<"\t"<<s.bill<<"\t\t"<<s.paid<<endl;
@@ -645,197 +445,7 @@ class project{
 							else {
 								cout<<"Return amount is Rs 0";
 								getch();
-								system("cls");
-								cout<<"\t***********************************************"<<endl;
-								cout<<"\t\t\tRECEIPT"<<endl;
-								cout<<"\t***********************************************"<<endl;
-								if(array[0]>=1)
-								{
-									cout<<"\t"<<array[0]<<" * Gralic Potato          $"<<array[0]*60<<endl;
-								}
-								if(array[1]>=1)
-								{
-									cout<<"\t"<<array[1]<<" * Veg Chowmin            $"<<array[1]*50<<endl;
-								}
-								if(array[2]>=1)
-								{
-									cout<<"\t"<<array[2]<<" * Veg Momo               $"<<array[2]*60<<endl;
-								}
-								if(array[3]>=1)
-								{
-									cout<<"\t"<<array[3]<<" * Potato Chips           $"<<array[3]*50<<endl;
-								}
-								if(array[4]>=1)
-								{
-									cout<<"\t"<<array[4]<<" * Burger                 $"<<array[4]*90<<endl;
-								}
-								if(array[5]>=1)
-								{
-									cout<<"\t"<<array[5]<<" * Sandwitch              $"<<array[5]*70<<endl;
-								}
-								if(array[6]>=1)
-								{
-									cout<<"\t"<<array[6]<<" * Puri Tarkari           $"<<array[6]*80<<endl;
-								}
-								if(array[7]>=1)
-								{
-									cout<<"\t"<<array[7]<<" * Alu Paratha            $"<<array[7]*60<<endl;
-								}
-								if(array[8]>=1)
-								{
-									cout<<"\t"<<array[8]<<" * Frentch Fry            $"<<array[8]*60<<endl;
-								}
-								if(array[9]>=1)
-								{
-									cout<<"\t"<<array[9]<<" * Chicken Momo           $"<<array[9]*90<<endl;
-								}
-								if(array[10]>=1)
-								{
-									cout<<"\t"<<array[10]<<" * Chicken Chowmein      $"<<array[10]*80<<endl;
-								}
-								if(array[11]>=1)
-								{
-									cout<<"\t"<<array[11]<<" * Chicken Burger        $"<<array[11]*70<<endl;
-								}
-								if(array[12]>=1)
-								{
-									cout<<"\t"<<array[12]<<" * Chicken Biriyani      $"<<array[12]*100<<endl;
-								}
-								if(array[13]>=1)
-								{
-									cout<<"\t"<<array[13]<<" * Buff Momo             $"<<array[13]*70<<endl;
-								}
-								if(array[14]>=1)
-								{
-									cout<<"\t"<<array[14]<<" * Pork Momo             $"<<array[14]*70<<endl;
-								}
-								if(array[15]>=1)
-								{
-									cout<<"\t"<<array[15]<<" * Buff/Chicken Sausage  $"<<array[15]*300<<endl;
-								}
-								if(array[16]>=1)
-								{
-									cout<<"\t"<<array[16]<<" * Egg Kattiroll         $"<<array[16]*120<<endl;
-								}
-								if(array[17]>=1)
-								{
-									cout<<"\t"<<array[17]<<" * Chicken Kattiroll     $"<<array[17]*150<<endl;
-								}
-								if(array[18]>=1)
-								{
-									cout<<"\t"<<array[18]<<" * Coffee                $"<<array[18]*50<<endl;
-								}
-								if(array[19]>=1)
-								{
-									cout<<"\t"<<array[19]<<" * Cold Drinks           $"<<array[19]*40<<endl;
-								}
-								if(array[20]>=1)
-								{
-									cout<<"\t"<<array[20]<<" * Milk Tea              $"<<array[20]*25<<endl;
-								}
-								if(array[21]>=1)
-								{
-									cout<<"\t"<<array[21]<<" * Fruit Juice           $"<<array[21]*35<<endl;
-								}
-								if(array[22]>=1)
-								{
-									cout<<"\t"<<array[22]<<" * Chocolate Milk        $"<<array[22]*30<<endl;
-								}
-								if(array[23]>=1)
-								{
-									cout<<"\t"<<array[23]<<" * Capuccino             $"<<array[23]*50<<endl;
-								}
-								if(array[24]>=1)
-								{
-									cout<<"\t"<<array[24]<<" * Americano             $"<<array[24]*60<<endl;
-								}
-								if(array[25]>=1)
-								{
-									cout<<"\t"<<array[25]<<" * Espresso              $"<<array[25]*50<<endl;
-								}
-								if(array[26]>=1)
-								{
-									cout<<"\t"<<array[26]<<" * Latte                 $"<<array[26]*80<<endl;
-								}
-								if(array[27]>=1)
-								{
-									cout<<"\t"<<array[27]<<" * Chatpate              $"<<array[27]*50<<endl;
-								}
-								if(array[28]>=1)
-								{
-									cout<<"\t"<<array[28]<<" * Pop Corn              $"<<array[28]*50<<endl;
-								}
-								if(array[29]>=1)
-								{
-									cout<<"\t"<<array[29]<<" * Fruit Salad           $"<<array[29]*65<<endl;
-								}
-								if(array[30]>=1)
-								{
-									cout<<"\t"<<array[30]<<" * Jelly Cup with Fruit  $"<<array[30]*75<<endl;
-								}
-								if(array[31]>=1)
-								{
-									cout<<"\t"<<array[31]<<" * Cookies               $"<<array[31]*60<<endl;
-								}
-								if(array[32]>=1)
-								{
-									cout<<"\t"<<array[32]<<" * Muffins               $"<<array[32]*50<<endl;
-								}
-								if(array[33]>=1)
-								{
-									cout<<"\t"<<array[33]<<" * Chips                 $"<<array[33]*40<<endl;
-								}
-								if(array[34]>=1)
-								{
-									cout<<"\t"<<array[34]<<" * Current Noodles       $"<<array[34]*60<<endl;
-								}
-								if(array[35]>=1)
-								{
-									cout<<"\t"<<array[35]<<" * Nimkin/Dalmot         $"<<array[35]*40<<endl;
-								}
-								if(array[36]>=1)
-								{
-									cout<<"\t"<<array[36]<<" * Ice Cream             $"<<array[36]*70<<endl;
-								}
-								if(array[37]>=1)
-								{
-									cout<<"\t"<<array[37]<<" * Black/White Forest    $"<<array[37]*90<<endl;
-								}
-								if(array[38]>=1)
-								{
-									cout<<"\t"<<array[38]<<" * Waffle                $"<<array[38]*75<<endl;
-								}
-								if(array[39]>=1)
-								{
-									cout<<"\t"<<array[39]<<" * Cream Doughnut        $"<<array[39]*50<<endl;
-								}
-								if(array[40]>=1)
-								{
-									cout<<"\t"<<array[40]<<" * Fruit Pie             $"<<array[40]*60<<endl;
-								}
-								if(array[41]>=1)
-								{
-									cout<<"\t"<<array[41]<<" * Stawberry Sundae      $"<<array[41]*80<<endl;
-								}
-								if(array[42]>=1)
-								{
-									cout<<"\t"<<array[42]<<" * Pastry                $"<<array[42]*60<<endl;
-								}
-								if(array[43]>=1)
-								{
-									cout<<"\t"<<array[43]<<" * Peanut Butter Bread   $"<<array[43]*90<<endl;
-								}
-								if(array[44]>=1)
-								{
-									cout<<"\t"<<array[44]<<" * Fruit Cake            $"<<array[44]*100<<endl;
-								}
-								cout<<"\t==============================================="<<endl;
-								cout<<"\tTOTAL AMOUNT              $"<<sum<<endl;
-								cout<<"\tPAID  AMOUNT              $"<<paidAmt<<endl;
-								cout<<"\t==============================================="<<endl;
-								cout<<"\t\t\tTHANK YOU"<<endl;
-								cout<<"\t==============================================="<<endl;
-								getch();
+								printReceipt(array,45,sum,paidAmt);
 							}
 							break;
 						}
@@ -952,393 +562,13 @@ class project{
 								amt=paidAmt-sum;
 								cout<<"\nReturn amount Rs"<<amt;
 								getch();
-								system("cls");
-								cout<<"\t***********************************************"<<endl;
-								cout<<"\t\t\tRECEIPT"<<endl;
-								cout<<"\t***********************************************"<<endl;
-								if(array[0]>=1)
-								{
-									cout<<"\t"<<array[0]<<" * Gralic Potato          $"<<array[0]*60<<endl;
-								}
-								if(array[1]>=1)
-								{
-									cout<<"\t"<<array[1]<<" * Veg Chowmin            $"<<array[1]*50<<endl;
-								}
-								if(array[2]>=1)
-								{
-									cout<<"\t"<<array[2]<<" * Veg Momo               $"<<array[2]*60<<endl;
-								}
-								if(array[3]>=1)
-								{
-									cout<<"\t"<<array[3]<<" * Potato Chips           $"<<array[3]*50<<endl;
-								}
-								if(array[4]>=1)
-								{
-									cout<<"\t"<<array[4]<<" * Burger                 $"<<array[4]*90<<endl;
-								}
-								if(array[5]>=1)
-								{
-									cout<<"\t"<<array[5]<<" * Sandwitch              $"<<array[5]*70<<endl;
-								}
-								if(array[6]>=1)
-								{
-									cout<<"\t"<<array[6]<<" * Puri Tarkari           $"<<array[6]*80<<endl;
-								}
-								if(array[7]>=1)
-								{
-									cout<<"\t"<<array[7]<<" * Alu Paratha            $"<<array[7]*60<<endl;
-								}
-								if(array[8]>=1)
-								{
-									cout<<"\t"<<array[8]<<" * Frentch Fry            $"<<array[8]*60<<endl;
-								}
-								if(array[9]>=1)
-								{
-									cout<<"\t"<<array[9]<<" * Chicken Momo           $"<<array[9]*90<<endl;
-								}
-								if(array[10]>=1)
-								{
-									cout<<"\t"<<array[10]<<" * Chicken Chowmein      $"<<array[10]*80<<endl;
-								}
-								if(array[11]>=1)
-								{
-									cout<<"\t"<<array[11]<<" * Chicken Burger        $"<<array[11]*70<<endl;
-								}
-								if(array[12]>=1)
-								{
-									cout<<"\t"<<array[12]<<" * Chicken Biriyani      $"<<array[12]*100<<endl;
-								}
-								if(array[13]>=1)
-								{
-									cout<<"\t"<<array[13]<<" * Buff Momo             $"<<array[13]*70<<endl;
-								}
-								if(array[14]>=1)
-								{
-									cout<<"\t"<<array[14]<<" * Pork Momo             $"<<array[14]*70<<endl;
-								}
-								if(array[15]>=1)
-								{
-									cout<<"\t"<<array[15]<<" * Buff/Chicken Sausage  $"<<array[15]*300<<endl;
-								}
-								if(array[16]>=1)
-								{
-									cout<<"\t"<<array[16]<<" * Egg Kattiroll         $"<<array[16]*120<<endl;
-								}
-								if(array[17]>=1)
-								{
-									cout<<"\t"<<array[17]<<" * Chicken Kattiroll     $"<<array[17]*150<<endl;
-								}
-								if(array[18]>=1)
-								{
-									cout<<"\t"<<array[18]<<" * Coffee                $"<<array[18]*50<<endl;
-								}
-								if(array[19]>=1)
-								{
-									cout<<"\t"<<array[19]<<" * Cold Drinks           $"<<array[19]*40<<endl;
-								}
-								if(array[20]>=1)
-								{
-									cout<<"\t"<<array[20]<<" * Milk Tea              $"<<array[20]*25<<endl;
-								}
-								if(array[21]>=1)
-								{
-									cout<<"\t"<<array[21]<<" * Fruit Juice           $"<<array[21]*35<<endl;
-								}
-								if(array[22]>=1)
-								{
-									cout<<"\t"<<array[22]<<" * Chocolate Milk        $"<<array[22]*30<<endl;
-								}
-								if(array[23]>=1)
-								{
-									cout<<"\t"<<array[23]<<" * Capuccino             $"<<array[23]*50<<endl;
-								}
-								if(array[24]>=1)
-								{
-									cout<<"\t"<<array[24]<<" * Americano             $"<<array[24]*60<<endl;
-								}
-								if(array[25]>=1)
-								{
-									cout<<"\t"<<array[25]<<" * Espresso              $"<<array[25]*50<<endl;
-								}
-								if(array[26]>=1)
-								{
-									cout<<"\t"<<array[26]<<" * Latte                 $"<<array[26]*80<<endl;
-								}
-								if(array[27]>=1)
-								{
-									cout<<"\t"<<array[27]<<" * Chatpate              $"<<array[27]*50<<endl;
-								}
-								if(array[28]>=1)
-								{
-									cout<<"\t"<<array[28]<<" * Pop Corn              $"<<array[28]*50<<endl;
-								}
-								if(array[29]>=1)
-								{
-									cout<<"\t"<<array[29]<<" * Fruit Salad           $"<<array[29]*65<<endl;
-								}
-								if(array[30]>=1)
-								{
-									cout<<"\t"<<array[30]<<" * Jelly Cup with Fruit  $"<<array[30]*75<<endl;
-								}
-								if(array[31]>=1)
-								{
-									cout<<"\t"<<array[31]<<" * Cookies               $"<<array[31]*60<<endl;
-								}
-								if(array[32]>=1)
-								{
-									cout<<"\t"<<array[32]<<" * Muffins               $"<<array[32]*50<<endl;
-								}
-								if(array[33]>=1)
-								{
-									cout<<"\t"<<array[33]<<" * Chips                 $"<<array[33]*40<<endl;
-								}
-								if(array[34]>=1)
-								{
-									cout<<"\t"<<array[34]<<" * Current Noodles       $"<<array[34]*60<<endl;
-								}
-								if(array[35]>=1)
-								{
-									cout<<"\t"<<array[35]<<" * Nimkin/Dalmot         $"<<array[35]*40<<endl;
-								}
-								if(array[36]>=1)
-								{
-									cout<<"\t"<<array[36]<<" * Ice Cream             $"<<array[36]*70<<endl;
-								}
-								if(array[37]>=1)
-								{
-									cout<<"\t"<<array[37]<<" * Black/White Forest    $"<<array[37]*90<<endl;
-								}
-								if(array[38]>=1)
-								{
-									cout<<"\t"<<array[38]<<" * Waffle                $"<<array[38]*75<<endl;
-								}
-								if(array[39]>=1)
-								{
-									cout<<"\t"<<array[39]<<" * Cream Doughnut        $"<<array[39]*50<<endl;
-								}
-								if(array[40]>=1)
-								{
-									cout<<"\t"<<array[40]<<" * Fruit Pie             $"<<array[40]*60<<endl;
-								}
-								if(array[41]>=1)
-								{
-									cout<<"\t"<<array[41]<<" * Stawberry Sundae      $"<<array[41]*80<<endl;
-								}
-								if(array[42]>=1)
-								{
-									cout<<"\t"<<array[42]<<" * Pastry                $"<<array[42]*60<<endl;
-								}
-								if(array[43]>=1)
-								{
-									cout<<"\t"<<array[43]<<" * Peanut Butter Bread   $"<<array[43]*90<<endl;
-								}
-								if(array[44]>=1)
-								{
-									cout<<"\t"<<array[44]<<" * Fruit Cake            $"<<array[44]*100<<endl;
-								}
-								cout<<"\t==============================================="<<endl;
-								cout<<"\tTOTAL AMOUNT              $"<<sum<<endl;
-								cout<<"\tPAID  AMOUNT              $"<<paidAmt<<endl;
-								cout<<"\t==============================================="<<endl;
-								cout<<"\t\t\tTHANK YOU"<<endl;
-								cout<<"\t==============================================="<<endl;
-								getch();
+								printReceipt(array,45,sum,paidAmt);
 							}
 							else if(paidAmt<sum){
 								amt=sum-paidAmt;
 								cout<<"\nYour due amount is Rs"<<amt;
 								getch();
-								system("cls");
-								cout<<"\t***********************************************"<<endl;
-								cout<<"\t\t\tRECEIPT"<<endl;
-								cout<<"\t***********************************************"<<endl;
-								if(array[0]>=1)
-								{
-									cout<<"\t"<<array[0]<<" * Gralic Potato          $"<<array[0]*60<<endl;
-								}
-								if(array[1]>=1)
-								{
-									cout<<"\t"<<array[1]<<" * Veg Chowmin            $"<<array[1]*50<<endl;
-								}
-								if(array[2]>=1)
-								{
-									cout<<"\t"<<array[2]<<" * Veg Momo               $"<<array[2]*60<<endl;
-								}
-								if(array[3]>=1)
-								{
-									cout<<"\t"<<array[3]<<" * Potato Chips           $"<<array[3]*50<<endl;
-								}
-								if(array[4]>=1)
-								{
-									cout<<"\t"<<array[4]<<" * Burger                 $"<<array[4]*90<<endl;
-								}
-								if(array[5]>=1)
-								{
-									cout<<"\t"<<array[5]<<" * Sandwitch              $"<<array[5]*70<<endl;
-								}
-								if(array[6]>=1)
-								{
-									cout<<"\t"<<array[6]<<" * Puri Tarkari           $"<<array[6]*80<<endl;
-								}
-								if(array[7]>=1)
-								{
-									cout<<"\t"<<array[7]<<" * Alu Paratha            $"<<array[7]*60<<endl;
-								}
-								if(array[8]>=1)
-								{
-									cout<<"\t"<<array[8]<<" * Frentch Fry            $"<<array[8]*60<<endl;
-								}
-								if(array[9]>=1)
-								{
-									cout<<"\t"<<array[9]<<" * Chicken Momo           $"<<array[9]*90<<endl;
-								}
-								if(array[10]>=1)
-								{
-									cout<<"\t"<<array[10]<<" * Chicken Chowmein      $"<<array[10]*80<<endl;
-								}
-								if(array[11]>=1)
-								{
-									cout<<"\t"<<array[11]<<" * Chicken Burger        $"<<array[11]*70<<endl;
-								}
-								if(array[12]>=1)
-								{
-									cout<<"\t"<<array[12]<<" * Chicken Biriyani      $"<<array[12]*100<<endl;
-								}
-								if(array[13]>=1)
-								{
-									cout<<"\t"<<array[13]<<" * Buff Momo             $"<<array[13]*70<<endl;
-								}
-								if(array[14]>=1)
-								{
-									cout<<"\t"<<array[14]<<" * Pork Momo             $"<<array[14]*70<<endl;
-								}
-								if(array[15]>=1)
-								{
-									cout<<"\t"<<array[15]<<" * Buff/Chicken Sausage  $"<<array[15]*300<<endl;
-								}
-								if(array[16]>=1)
-								{
-									cout<<"\t"<<array[16]<<" * Egg Kattiroll         $"<<array[16]*120<<endl;
-								}
-								if(array[17]>=1)
-								{
-									cout<<"\t"<<array[17]<<" * Chicken Kattiroll     $"<<array[17]*150<<endl;
-								}
-								if(array[18]>=1)
-								{
-									cout<<"\t"<<array[18]<<" * Coffee                $"<<array[18]*50<<endl;
-								}
-								if(array[19]>=1)
-								{
-									cout<<"\t"<<array[19]<<" * Cold Drinks           $"<<array[19]*40<<endl;
-								}
-								if(array[20]>=1)
-								{
-									cout<<"\t"<<array[20]<<" * Milk Tea              $"<<array[20]*25<<endl;
-								}
-								if(array[21]>=1)
-								{
-									cout<<"\t"<<array[21]<<" * Fruit Juice           $"<<array[21]*35<<endl;
-								}
-								if(array[22]>=1)
-								{
-									cout<<"\t"<<array[22]<<" * Chocolate Milk        $"<<array[22]*30<<endl;
-								}
-								if(array[23]>=1)
-								{
-									cout<<"\t"<<array[23]<<" * Capuccino             $"<<array[23]*50<<endl;
-								}
-								if(array[24]>=1)
-								{
-									cout<<"\t"<<array[24]<<" * Americano             $"<<array[24]*60<<endl;
-								}
-								if(array[25]>=1)
-								{
-									cout<<"\t"<<array[25]<<" * Espresso              $"<<array[25]*50<<endl;
-								}
-								if(array[26]>=1)
-								{
-									cout<<"\t"<<array[26]<<" * Latte                 $"<<array[26]*80<<endl;
-								}
-								if(array[27]>=1)
-								{
-									cout<<"\t"<<array[27]<<" * Chatpate              $"<<array[27]*50<<endl;
-								}
-								if(array[28]>=1)
-								{
-									cout<<"\t"<<array[28]<<" * Pop Corn              $"<<array[28]*50<<endl;
-								}
-								if(array[29]>=1)
-								{
-									cout<<"\t"<<array[29]<<" * Fruit Salad           $"<<array[29]*65<<endl;
-								}
-								if(array[30]>=1)
-								{
-									cout<<"\t"<<array[30]<<" * Jelly Cup with Fruit  $"<<array[30]*75<<endl;
-								}
-								if(array[31]>=1)
-								{
-									cout<<"\t"<<array[31]<<" * Cookies               $"<<array[31]*60<<endl;
-								}
-								if(array[32]>=1)
-								{
-									cout<<"\t"<<array[32]<<" * Muffins               $"<<array[32]*50<<endl;
-								}
-								if(array[33]>=1)
-								{
-									cout<<"\t"<<array[33]<<" * Chips                 $"<<array[33]*40<<endl;
-								}
-								if(array[34]>=1)
-								{
-									cout<<"\t"<<array[34]<<" * Current Noodles       $"<<array[34]*60<<endl;
-								}
-								if(array[35]>=1)
-								{
-									cout<<"\t"<<array[35]<<" * Nimkin/Dalmot         $"<<array[35]*40<<endl;
-								}
-								if(array[36]>=1)
-								{
-									cout<<"\t"<<array[36]<<" * Ice Cream             $"<<array[36]*70<<endl;
-								}
-								if(array[37]>=1)
-								{
-									cout<<"\t"<<array[37]<<" * Black/White Forest    $"<<array[37]*90<<endl;
-								}
-								if(array[38]>=1)
-								{
-									cout<<"\t"<<array[38]<<" * Waffle                $"<<array[38]*75<<endl;
-								}
-								if(array[39]>=1)
-								{
-									cout<<"\t"<<array[39]<<" * Cream Doughnut        $"<<array[39]*50<<endl;
-								}
-								if(array[40]>=1)
-								{
-									cout<<"\t"<<array[40]<<" * Fruit Pie             $"<<array[40]*60<<endl;
-								}
-								if(array[41]>=1)
-								{
-									cout<<"\t"<<array[41]<<" * Stawberry Sundae      $"<<array[41]*80<<endl;
-								}
-								if(array[42]>=1)
-								{
-									cout<<"\t"<<array[42]<<" * Pastry                $"<<array[42]*60<<endl;
-								}
-								if(array[43]>=1)
-								{
-									cout<<"\t"<<array[43]<<" * Peanut Butter Bread   $"<<array[43]*90<<endl;
-								}
-								if(array[44]>=1)
-								{
-									cout<<"\t"<<array[44]<<" * Fruit Cake            $"<<array[44]*100<<endl;
-								}
-								cout<<"\t==============================================="<<endl;
-								cout<<"\tTOTAL AMOUNT              $"<<sum<<endl;
-								cout<<"\tPAID  AMOUNT              $"<<paidAmt<<endl;
-								cout<<"\t==============================================="<<endl;
-								cout<<"\t\t\tTHANK YOU"<<endl;
-								cout<<"\t==============================================="<<endl;
-								getch();
+								printReceipt(array,45,sum,paidAmt);
 								ofstream a;
 								s.paid=amt;
 								a.open("liability.dat", ios :: app);{
@@ -1348,197 +578,7 @@ class project{
 							}else {
 								cout<<"Return amount is Rs 0";
 								getch();
-								system("cls");
-								cout<<"\t***********************************************"<<endl;
-								cout<<"\t\t\tRECEIPT"<<endl;
-								cout<<"\t***********************************************"<<endl;
-								if(array[0]>=1)
-								{
-									cout<<"\t"<<array[0]<<" * Gralic Potato          $"<<array[0]*60<<endl;
-								}
-								if(array[1]>=1)
-								{
-									cout<<"\t"<<array[1]<<" * Veg Chowmin            $"<<array[1]*50<<endl;
-								}
-								if(array[2]>=1)
-								{
-									cout<<"\t"<<array[2]<<" * Veg Momo               $"<<array[2]*60<<endl;
-								}
-								if(array[3]>=1)
-								{
-									cout<<"\t"<<array[3]<<" * Potato Chips           $"<<array[3]*50<<endl;
-								}
-								if(array[4]>=1)
-								{
-									cout<<"\t"<<array[4]<<" * Burger                 $"<<array[4]*90<<endl;
-								}
-								if(array[5]>=1)
-								{
-									cout<<"\t"<<array[5]<<" * Sandwitch              $"<<array[5]*70<<endl;
-								}
-								if(array[6]>=1)
-								{
-									cout<<"\t"<<array[6]<<" * Puri Tarkari           $"<<array[6]*80<<endl;
-								}
-								if(array[7]>=1)
-								{
-									cout<<"\t"<<array[7]<<" * Alu Paratha            $"<<array[7]*60<<endl;
-								}
-								if(array[8]>=1)
-								{
-									cout<<"\t"<<array[8]<<" * Frentch Fry            $"<<array[8]*60<<endl;
-								}
-								if(array[9]>=1)
-								{
-									cout<<"\t"<<array[9]<<" * Chicken Momo           $"<<array[9]*90<<endl;
-								}
-								if(array[10]>=1)
-								{
-									cout<<"\t"<<array[10]<<" * Chicken Chowmein      $"<<array[10]*80<<endl;
-								}
-								if(array[11]>=1)
-								{
-									cout<<"\t"<<array[11]<<" * Chicken Burger        $"<<array[11]*70<<endl;
-								}
-								if(array[12]>=1)
-								{
-									cout<<"\t"<<array[12]<<" * Chicken Biriyani      $"<<array[12]*100<<endl;
-								}
-								if(array[13]>=1)
-								{
-									cout<<"\t"<<array[13]<<" * Buff Momo             $"<<array[13]*70<<endl;
-								}
-								if(array[14]>=1)
-								{
-									cout<<"\t"<<array[14]<<" * Pork Momo             $"<<array[14]*70<<endl;
-								}
-								if(array[15]>=1)
-								{
-									cout<<"\t"<<array[15]<<" * Buff/Chicken Sausage  $"<<array[15]*300<<endl;
-								}
-								if(array[16]>=1)
-								{
-									cout<<"\t"<<array[16]<<" * Egg Kattiroll         $"<<array[16]*120<<endl;
-								}
-								if(array[17]>=1)
-								{
-									cout<<"\t"<<array[17]<<" * Chicken Kattiroll     $"<<array[17]*150<<endl;
-								}
-								if(array[18]>=1)
-								{
-									cout<<"\t"<<array[18]<<" * Coffee                $"<<array[18]*50<<endl;
-								}
-								if(array[19]>=1)
-								{
-									cout<<"\t"<<array[19]<<" * Cold Drinks           $"<<array[19]*40<<endl;
-								}
-								if(array[20]>=1)
-								{
-									cout<<"\t"<<array[20]<<" * Milk Tea              $"<<array[20]*25<<endl;
-								}
-								if(array[21]>=1)
-								{
-									cout<<"\t"<<array[21]<<" * Fruit Juice           $"<<array[21]*35<<endl;
-								}
-								if(array[22]>=1)
-								{
-									cout<<"\t"<<array[22]<<" * Chocolate Milk        $"<<array[22]*30<<endl;
-								}
-								if(array[23]>=1)
-								{
-									cout<<"\t"<<array[23]<<" * Capuccino             $"<<array[23]*50<<endl;
-								}
-								if(array[24]>=1)
-								{
-									cout<<"\t"<<array[24]<<" * Americano             $"<<array[24]*60<<endl;
-								}
-								if(array[25]>=1)
-								{
-									cout<<"\t"<<array[25]<<" * Espresso              $"<<array[25]*50<<endl;
-								}
-								if(array[26]>=1)
-								{
-									cout<<"\t"<<array[26]<<" * Latte                 $"<<array[26]*80<<endl;
-								}
-								if(array[27]>=1)
-								{
-									cout<<"\t"<<array[27]<<" * Chatpate              $"<<array[27]*50<<endl;
-								}
-								if(array[28]>=1)
-								{
-									cout<<"\t"<<array[28]<<" * Pop Corn              $"<<array[28]*50<<endl;
-								}
-								if(array[29]>=1)
-								{
-									cout<<"\t"<<array[29]<<" * Fruit Salad           $"<<array[29]*65<<endl;
-								}
-								if(array[30]>=1)
-								{
-									cout<<"\t"<<array[30]<<" * Jelly Cup with Fruit  $"<<array[30]*75<<endl;
-								}
-								if(array[31]>=1)
-								{
-									cout<<"\t"<<array[31]<<" * Cookies               $"<<array[31]*60<<endl;
-								}
-								if(array[32]>=1)
-								{
-									cout<<"\t"<<array[32]<<" * Muffins               $"<<array[32]*50<<endl;
-								}
-								if(array[33]>=1)
-								{
-									cout<<"\t"<<array[33]<<" * Chips                 $"<<array[33]*40<<endl;
-								}
-								if(array[34]>=1)
-								{
-									cout<<"\t"<<array[34]<<" * Current Noodles       $"<<array[34]*60<<endl;
-								}
-								if(array[35]>=1)
-								{
-									cout<<"\t"<<array[35]<<" * Nimkin/Dalmot         $"<<array[35]*40<<endl;
-								}
-								if(array[36]>=1)
-								{
-									cout<<"\t"<<array[36]<<" * Ice Cream             $"<<array[36]*70<<endl;
-								}
-								if(array[37]>=1)
-								{
-									cout<<"\t"<<array[37]<<" * Black/White Forest    $"<<array[37]*90<<endl;
-								}
-								if(array[38]>=1)
-								{
-									cout<<"\t"<<array[38]<<" * Waffle                $"<<array[38]*75<<endl;
-								}
-								if(array[39]>=1)
-								{
-									cout<<"\t"<<array[39]<<" * Cream Doughnut        $"<<array[39]*50<<endl;
-								}
-								if(array[40]>=1)
-								{
-									cout<<"\t"<<array[40]<<" * Fruit Pie             $"<<array[40]*60<<endl;
-								}
-								if(array[41]>=1)
-								{
-									cout<<"\t"<<array[41]<<" * Stawberry Sundae      $"<<array[41]*80<<endl;
-								}
-								if(array[42]>=1)
-								{
-									cout<<"\t"<<array[42]<<" * Pastry                $"<<array[42]*60<<endl;
-								}
-								if(array[43]>=1)
-								{
-									cout<<"\t"<<array[43]<<" * Peanut Butter Bread   $"<<array[43]*90<<endl;
-								}
-								if(array[44]>=1)
-								{
-									cout<<"\t"<<array[44]<<" * Fruit Cake            $"<<array[44]*100<<endl;
-								}
-								cout<<"\t==============================================="<<endl;
-								cout<<"\tTOTAL AMOUNT              $"<<sum<<endl;
-								cout<<"\tPAID  AMOUNT              $"<<paidAmt<<endl;
-								cout<<"\t==============================================="<<endl;
-								cout<<"\t\t\tTHANK YOU"<<endl;
-								cout<<"\t==============================================="<<endl;
-								getch();
+								printReceipt(array,45,sum,paidAmt);
 							}
 							break;
 						}
@@ -1651,393 +691,13 @@ class project{
 								amt=paidAmt-sum;
 								cout<<"\nReturn amount Rs"<<amt;
 								getch();
-								system("cls");
-								cout<<"\t***********************************************"<<endl;
-								cout<<"\t\t\tRECEIPT"<<endl;
-								cout<<"\t***********************************************"<<endl;
-								if(array[0]>=1)
-								{
-									cout<<"\t"<<array[0]<<" * Gralic Potato          $"<<array[0]*60<<endl;
-								}
-								if(array[1]>=1)
-								{
-									cout<<"\t"<<array[1]<<" * Veg Chowmin            $"<<array[1]*50<<endl;
-								}
-								if(array[2]>=1)
-								{
-									cout<<"\t"<<array[2]<<" * Veg Momo               $"<<array[2]*60<<endl;
-								}
-								if(array[3]>=1)
-								{
-									cout<<"\t"<<array[3]<<" * Potato Chips           $"<<array[3]*50<<endl;
-								}
-								if(array[4]>=1)
-								{
-									cout<<"\t"<<array[4]<<" * Burger                 $"<<array[4]*90<<endl;
-								}
-								if(array[5]>=1)
-								{
-									cout<<"\t"<<array[5]<<" * Sandwitch              $"<<array[5]*70<<endl;
-								}
-								if(array[6]>=1)
-								{
-									cout<<"\t"<<array[6]<<" * Puri Tarkari           $"<<array[6]*80<<endl;
-								}
-								if(array[7]>=1)
-								{
-									cout<<"\t"<<array[7]<<" * Alu Paratha            $"<<array[7]*60<<endl;
-								}
-								if(array[8]>=1)
-								{
-									cout<<"\t"<<array[8]<<" * Frentch Fry            $"<<array[8]*60<<endl;
-								}
-								if(array[9]>=1)
-								{
-									cout<<"\t"<<array[9]<<" * Chicken Momo           $"<<array[9]*90<<endl;
-								}
-								if(array[10]>=1)
-								{
-									cout<<"\t"<<array[10]<<" * Chicken Chowmein      $"<<array[10]*80<<endl;
-								}
-								if(array[11]>=1)
-								{
-									cout<<"\t"<<array[11]<<" * Chicken Burger        $"<<array[11]*70<<endl;
-								}
-								if(array[12]>=1)
-								{
-									cout<<"\t"<<array[12]<<" * Chicken Biriyani      $"<<array[12]*100<<endl;
-								}
-								if(array[13]>=1)
-								{
-									cout<<"\t"<<array[13]<<" * Buff Momo             $"<<array[13]*70<<endl;
-								}
-								if(array[14]>=1)
-								{
-									cout<<"\t"<<array[14]<<" * Pork Momo             $"<<array[14]*70<<endl;
-								}
-								if(array[15]>=1)
-								{
-									cout<<"\t"<<array[15]<<" * Buff/Chicken Sausage  $"<<array[15]*300<<endl;
-								}
-								if(array[16]>=1)
-								{
-									cout<<"\t"<<array[16]<<" * Egg Kattiroll         $"<<array[16]*120<<endl;
-								}
-								if(array[17]>=1)
-								{
-									cout<<"\t"<<array[17]<<" * Chicken Kattiroll     $"<<array[17]*150<<endl;
-								}
-								if(array[18]>=1)
-								{
-									cout<<"\t"<<array[18]<<" * Coffee                $"<<array[18]*50<<endl;
-								}
-								if(array[19]>=1)
-								{
-									cout<<"\t"<<array[19]<<" * Cold Drinks           $"<<array[19]*40<<endl;
-								}
-								if(array[20]>=1)
-								{
-									cout<<"\t"<<array[20]<<" * Milk Tea              $"<<array[20]*25<<endl;
-								}
-								if(array[21]>=1)
-								{
-									cout<<"\t"<<array[21]<<" * Fruit Juice           $"<<array[21]*35<<endl;
-								}
-								if(array[22]>=1)
-								{
-									cout<<"\t"<<array[22]<<" * Chocolate Milk        $"<<array[22]*30<<endl;
-								}
-								if(array[23]>=1)
-								{
-									cout<<"\t"<<array[23]<<" * Capuccino             $"<<array[23]*50<<endl;
-								}
-								if(array[24]>=1)
-								{
-									cout<<"\t"<<array[24]<<" * Americano             $"<<array[24]*60<<endl;
-								}
-								if(array[25]>=1)
-								{
-									cout<<"\t"<<array[25]<<" * Espresso              $"<<array[25]*50<<endl;
-								}
-								if(array[26]>=1)
-								{
-									cout<<"\t"<<array[26]<<" * Latte                 $"<<array[26]*80<<endl;
-								}
-								if(array[27]>=1)
-								{
-									cout<<"\t"<<array[27]<<" * Chatpate              $"<<array[27]*50<<endl;
-								}
-								if(array[28]>=1)
-								{
-									cout<<"\t"<<array[28]<<" * Pop Corn              $"<<array[28]*50<<endl;
-								}
-								if(array[29]>=1)
-								{
-									cout<<"\t"<<array[29]<<" * Fruit Salad           $"<<array[29]*65<<endl;
-								}
-								if(array[30]>=1)
-								{
-									cout<<"\t"<<array[30]<<" * Jelly Cup with Fruit  $"<<array[30]*75<<endl;
-								}
-								if(array[31]>=1)
-								{
-									cout<<"\t"<<array[31]<<" * Cookies               $"<<array[31]*60<<endl;
-								}
-								if(array[32]>=1)
-								{
-									cout<<"\t"<<array[32]<<" * Muffins               $"<<array[32]*50<<endl;
-								}
-								if(array[33]>=1)
-								{
-									cout<<"\t"<<array[33]<<" * Chips                 $"<<array[33]*40<<endl;
-								}
-								if(array[34]>=1)
-								{
-									cout<<"\t"<<array[34]<<" * Current Noodles       $"<<array[34]*60<<endl;
-								}
-								if(array[35]>=1)
-								{
-									cout<<"\t"<<array[35]<<" * Nimkin/Dalmot         $"<<array[35]*40<<endl;
-								}
-								if(array[36]>=1)
-								{
-									cout<<"\t"<<array[36]<<" * Ice Cream             $"<<array[36]*70<<endl;
-								}
-								if(array[37]>=1)
-								{
-									cout<<"\t"<<array[37]<<" * Black/White Forest    $"<<array[37]*90<<endl;
-								}
-								if(array[38]>=1)
-								{
-									cout<<"\t"<<array[38]<<" * Waffle                $"<<array[38]*75<<endl;
-								}
-								if(array[39]>=1)
-								{
-									cout<<"\t"<<array[39]<<" * Cream Doughnut        $"<<array[39]*50<<endl;
-								}
-								if(array[40]>=1)
-								{
-									cout<<"\t"<<array[40]<<" * Fruit Pie             $"<<array[40]*60<<endl;
-								}
-								if(array[41]>=1)
-								{
-									cout<<"\t"<<array[41]<<" * Stawberry Sundae      $"<<array[41]*80<<endl;
-								}
-								if(array[42]>=1)
-								{
-									cout<<"\t"<<array[42]<<" * Pastry                $"<<array[42]*60<<endl;
-								}
-								if(array[43]>=1)
-								{
-									cout<<"\t"<<array[43]<<" * Peanut Butter Bread   $"<<array[43]*90<<endl;
-								}
-								if(array[44]>=1)
-								{
-									cout<<"\t"<<array[44]<<" * Fruit Cake            $"<<array[44]*100<<endl;
-								}
-								cout<<"\t==============================================="<<endl;
-								cout<<"\tTOTAL AMOUNT              $"<<sum<<endl;
-								cout<<"\tPAID  AMOUNT              $"<<paidAmt<<endl;
-								cout<<"\t==============================================="<<endl;
-								cout<<"\t                     THANK YOU                 "<<endl;
-								cout<<"\t==============================================="<<endl;
-								getch();
+								printReceipt(array,45,sum,paidAmt);
 							}
 							else if(paidAmt<sum){
 								amt=sum-paidAmt;
 								cout<<"\nYour due amount is Rs"<<amt;
 								getch();
-								system("cls");
-								cout<<"\t***********************************************"<<endl;
-								cout<<"\t\t\tRECEIPT"<<endl;
-								cout<<"\t***********************************************"<<endl;
-								if(array[0]>=1)
-								{
-									cout<<"\t"<<array[0]<<" * Gralic Potato          $"<<array[0]*60<<endl;
-								}
-								if(array[1]>=1)
-								{
-									cout<<"\t"<<array[1]<<" * Veg Chowmin            $"<<array[1]*50<<endl;
-								}
-								if(array[2]>=1)
-								{
-									cout<<"\t"<<array[2]<<" * Veg Momo               $"<<array[2]*60<<endl;
-								}
-								if(array[3]>=1)
-								{
-									cout<<"\t"<<array[3]<<" * Potato Chips           $"<<array[3]*50<<endl;
-								}
-								if(array[4]>=1)
-								{
-									cout<<"\t"<<array[4]<<" * Burger                 $"<<array[4]*90<<endl;
-								}
-								if(array[5]>=1)
-								{
-									cout<<"\t"<<array[5]<<" * Sandwitch              $"<<array[5]*70<<endl;
-								}
-								if(array[6]>=1)
-								{
-									cout<<"\t"<<array[6]<<" * Puri Tarkari           $"<<array[6]*80<<endl;
-								}
-								if(array[7]>=1)
-								{
-									cout<<"\t"<<array[7]<<" * Alu Paratha            $"<<array[7]*60<<endl;
-								}
-								if(array[8]>=1)
-								{
-									cout<<"\t"<<array[8]<<" * Frentch Fry            $"<<array[8]*60<<endl;
-								}
-								if(array[9]>=1)
-								{
-									cout<<"\t"<<array[9]<<" * Chicken Momo           $"<<array[9]*90<<endl;
-								}
-								if(array[10]>=1)
-								{
-									cout<<"\t"<<array[10]<<" * Chicken Chowmein      $"<<array[10]*80<<endl;
-								}
-								if(array[11]>=1)
-								{
-									cout<<"\t"<<array[11]<<" * Chicken Burger        $"<<array[11]*70<<endl;
-								}
-								if(array[12]>=1)
-								{
-									cout<<"\t"<<array[12]<<" * Chicken Biriyani      $"<<array[12]*100<<endl;
-								}
-								if(array[13]>=1)
-								{
-									cout<<"\t"<<array[13]<<" * Buff Momo             $"<<array[13]*70<<endl;
-								}
-								if(array[14]>=1)
-								{
-									cout<<"\t"<<array[14]<<" * Pork Momo             $"<<array[14]*70<<endl;
-								}
-								if(array[15]>=1)
-								{
-									cout<<"\t"<<array[15]<<" * Buff/Chicken Sausage  $"<<array[15]*300<<endl;
-								}
-								if(array[16]>=1)
-								{
-									cout<<"\t"<<array[16]<<" * Egg Kattiroll         $"<<array[16]*120<<endl;
-								}
-								if(array[17]>=1)
-								{
-									cout<<"\t"<<array[17]<<" * Chicken Kattiroll     $"<<array[17]*150<<endl;
-								}
-								if(array[18]>=1)
-								{
-									cout<<"\t"<<array[18]<<" * Coffee                $"<<array[18]*50<<endl;
-								}
-								if(array[19]>=1)
-								{
-									cout<<"\t"<<array[19]<<" * Cold Drinks           $"<<array[19]*40<<endl;
-								}
-								if(array[20]>=1)
-								{
-									cout<<"\t"<<array[20]<<" * Milk Tea              $"<<array[20]*25<<endl;
-								}
-								if(array[21]>=1)
-								{
-									cout<<"\t"<<array[21]<<" * Fruit Juice           $"<<array[21]*35<<endl;
-								}
-								if(array[22]>=1)
-								{
-									cout<<"\t"<<array[22]<<" * Chocolate Milk        $"<<array[22]*30<<endl;
-								}
-								if(array[23]>=1)
-								{
-									cout<<"\t"<<array[23]<<" * Capuccino             $"<<array[23]*50<<endl;
-								}
-								if(array[24]>=1)
-								{
-									cout<<"\t"<<array[24]<<" * Americano             $"<<array[24]*60<<endl;
-								}
-								if(array[25]>=1)
-								{
-									cout<<"\t"<<array[25]<<" * Espresso              $"<<array[25]*50<<endl;
-								}
-								if(array[26]>=1)
-								{
-									cout<<"\t"<<array[26]<<" * Latte                 $"<<array[26]*80<<endl;
-								}
-								if(array[27]>=1)
-								{
-									cout<<"\t"<<array[27]<<" * Chatpate              $"<<array[27]*50<<endl;
-								}
-								if(array[28]>=1)
-								{
-									cout<<"\t"<<array[28]<<" * Pop Corn              $"<<array[28]*50<<endl;
-								}
-								if(array[29]>=1)
-								{
-									cout<<"\t"<<array[29]<<" * Fruit Salad           $"<<array[29]*65<<endl;
-								}
-								if(array[30]>=1)
-								{
-									cout<<"\t"<<array[30]<<" * Jelly Cup with Fruit  $"<<array[30]*75<<endl;
-								}
-								if(array[31]>=1)
-								{
-									cout<<"\t"<<array[31]<<" * Cookies               $"<<array[31]*60<<endl;
-								}
-								if(array[32]>=1)
-								{
-									cout<<"\t"<<array[32]<<" * Muffins               $"<<array[32]*50<<endl;
-								}
-								if(array[33]>=1)
-								{
-									cout<<"\t"<<array[33]<<" * Chips                 $"<<array[33]*40<<endl;
-								}
-								if(array[34]>=1)
-								{
-									cout<<"\t"<<array[34]<<" * Current Noodles       $"<<array[34]*60<<endl;
-								}
-								if(array[35]>=1)
-								{
-									cout<<"\t"<<array[35]<<" * Nimkin/Dalmot         $"<<array[35]*40<<endl;
-								}
-								if(array[36]>=1)
-								{
-									cout<<"\t"<<array[36]<<" * Ice Cream             $"<<array[36]*70<<endl;
-								}
-								if(array[37]>=1)
-								{
-									cout<<"\t"<<array[37]<<" * Black/White Forest    $"<<array[37]*90<<endl;
-								}
-								if(array[38]>=1)
-								{
-									cout<<"\t"<<array[38]<<" * Waffle                $"<<array[38]*75<<endl;
-								}
-								if(array[39]>=1)
-								{
-									cout<<"\t"<<array[39]<<" * Cream Doughnut        $"<<array[39]*50<<endl;
-								}
-								if(array[40]>=1)
-								{
-									cout<<"\t"<<array[40]<<" * Fruit Pie             $"<<array[40]*60<<endl;
-								}
-								if(array[41]>=1)
-								{
-									cout<<"\t"<<array[41]<<" * Stawberry Sundae      $"<<array[41]*80<<endl;
-								}
-								if(array[42]>=1)
-								{
-									cout<<"\t"<<array[42]<<" * Pastry                $"<<array[42]*60<<endl;
-								}
-								if(array[43]>=1)
-								{
-									cout<<"\t"<<array[43]<<" * Peanut Butter Bread   $"<<array[43]*90<<endl;
-								}
-								if(array[44]>=1)
-								{
-									cout<<"\t"<<array[44]<<" * Fruit Cake            $"<<array[44]*100<<endl;
-								}
-								cout<<"\t==============================================="<<endl;
-								cout<<"\tTOTAL AMOUNT              $"<<sum<<endl;
-								cout<<"\tPAID  AMOUNT              $"<<paidAmt<<endl;
-								cout<<"\t==============================================="<<endl;
-								cout<<"\t\t\tTHANK YOU"<<endl;
-								cout<<"\t==============================================="<<endl;
-								getch();
+								printReceipt(array,45,sum,paidAmt);
 								ofstream a;
 								s.paid=amt;
 								a.open("liability.dat", ios :: app);{
@@ -2048,197 +708,7 @@ class project{
 							else {
 								cout<<"Return amount is Rs 0";
 								getch();
-								system("cls");
-								cout<<"\t***********************************************"<<endl;
-								cout<<"\t\t\tRECEIPT"<<endl;
-								cout<<"\t***********************************************"<<endl;
-								if(array[0]>=1)
-								{
-									cout<<"\t"<<array[0]<<" * Gralic Potato          $"<<array[0]*60<<endl;
-								}
-								if(array[1]>=1)
-								{
-									cout<<"\t"<<array[1]<<" * Veg Chowmin            $"<<array[1]*50<<endl;
-								}
-								if(array[2]>=1)
-								{
-									cout<<"\t"<<array[2]<<" * Veg Momo               $"<<array[2]*60<<endl;
-								}
-								if(array[3]>=1)
-								{
-									cout<<"\t"<<array[3]<<" * Potato Chips           $"<<array[3]*50<<endl;
-								}
-								if(array[4]>=1)
-								{
-									cout<<"\t"<<array[4]<<" * Burger                 $"<<array[4]*90<<endl;
-								}
-								if(array[5]>=1)
-								{
-									cout<<"\t"<<array[5]<<" * Sandwitch              $"<<array[5]*70<<endl;
-								}
-								if(array[6]>=1)
-								{
-									cout<<"\t"<<array[6]<<" * Puri Tarkari           $"<<array[6]*80<<endl;
-								}
-								if(array[7]>=1)
-								{
-									cout<<"\t"<<array[7]<<" * Alu Paratha            $"<<array[7]*60<<endl;
-								}
-								if(array[8]>=1)
-								{
-									cout<<"\t"<<array[8]<<" * Frentch Fry            $"<<array[8]*60<<endl;
-								}
-								if(array[9]>=1)
-								{
-									cout<<"\t"<<array[9]<<" * Chicken Momo           $"<<array[9]*90<<endl;
-								}
-								if(array[10]>=1)
-								{
-									cout<<"\t"<<array[10]<<" * Chicken Chowmein      $"<<array[10]*80<<endl;
-								}
-								if(array[11]>=1)
-								{
-									cout<<"\t"<<array[11]<<" * Chicken Burger        $"<<array[11]*70<<endl;
-								}
-								if(array[12]>=1)
-								{
-									cout<<"\t"<<array[12]<<" * Chicken Biriyani      $"<<array[12]*100<<endl;
-								}
-								if(array[13]>=1)
-								{
-									cout<<"\t"<<array[13]<<" * Buff Momo             $"<<array[13]*70<<endl;
-								}
-								if(array[14]>=1)
-								{
-									cout<<"\t"<<array[14]<<" * Pork Momo             $"<<array[14]*70<<endl;
-								}
-								if(array[15]>=1)
-								{
-									cout<<"\t"<<array[15]<<" * Buff/Chicken Sausage  $"<<array[15]*300<<endl;
-								}
-								if(array[16]>=1)
-								{
-									cout<<"\t"<<array[16]<<" * Egg Kattiroll         $"<<array[16]*120<<endl;
-								}
-								if(array[17]>=1)
-								{
-									cout<<"\t"<<array[17]<<" * Chicken Kattiroll     $"<<array[17]*150<<endl;
-								}
-								if(array[18]>=1)
-								{
-									cout<<"\t"<<array[18]<<" * Coffee                $"<<array[18]*50<<endl;
-								}
-								if(array[19]>=1)
-								{
-									cout<<"\t"<<array[19]<<" * Cold Drinks           $"<<array[19]*40<<endl;
-								}
-								if(array[20]>=1)
-								{
-									cout<<"\t"<<array[20]<<" * Milk Tea              $"<<array[20]*25<<endl;
-								}
-								if(array[21]>=1)
-								{
-									cout<<"\t"<<array[21]<<" * Fruit Juice           $"<<array[21]*35<<endl;
-								}
-								if(array[22]>=1)
-								{
-									cout<<"\t"<<array[22]<<" * Chocolate Milk        $"<<array[22]*30<<endl;
-								}
-								if(array[23]>=1)
-								{
-									cout<<"\t"<<array[23]<<" * Capuccino             $"<<array[23]*50<<endl;
-								}
-								if(array[24]>=1)
-								{
-									cout<<"\t"<<array[24]<<" * Americano             $"<<array[24]*60<<endl;
-								}
-								if(array[25]>=1)
-								{
-									cout<<"\t"<<array[25]<<" * Espresso              $"<<array[25]*50<<endl;
-								}
-								if(array[26]>=1)
-								{
-									cout<<"\t"<<array[26]<<" * Latte                 $"<<array[26]*80<<endl;
-								}
-								if(array[27]>=1)
-								{
-									cout<<"\t"<<array[27]<<" * Chatpate              $"<<array[27]*50<<endl;
-								}
-								if(array[28]>=1)
-								{
-									cout<<"\t"<<array[28]<<" * Pop Corn              $"<<array[28]*50<<endl;
-								}
-								if(array[29]>=1)
-								{
-									cout<<"\t"<<array[29]<<" * Fruit Salad           $"<<array[29]*65<<endl;
-								}
-								if(array[30]>=1)
-								{
-									cout<<"\t"<<array[30]<<" * Jelly Cup with Fruit  $"<<array[30]*75<<endl;
-								}
-								if(array[31]>=1)
-								{
-									cout<<"\t"<<array[31]<<" * Cookies               $"<<array[31]*60<<endl;
-								}
-								if(array[32]>=1)
-								{
-									cout<<"\t"<<array[32]<<" * Muffins               $"<<array[32]*50<<endl;
-								}
-								if(array[33]>=1)
-								{
-									cout<<"\t"<<array[33]<<" * Chips                 $"<<array[33]*40<<endl;
-								}
-								if(array[34]>=1)
-								{
-									cout<<"\t"<<array[34]<<" * Current Noodles       $"<<array[34]*60<<endl;
-								}
-								if(array[35]>=1)
-								{
-									cout<<"\t"<<array[35]<<" * Nimkin/Dalmot         $"<<array[35]*40<<endl;
-								}
-								if(array[36]>=1)
-								{
-									cout<<"\t"<<array[36]<<" * Ice Cream             $"<<array[36]*70<<endl;
-								}
-								if(array[37]>=1)
-								{
-									cout<<"\t"<<array[37]<<" * Black/White Forest    $"<<array[37]*90<<endl;
-								}
-								if(array[38]>=1)
-								{
-									cout<<"\t"<<array[38]<<" * Waffle                $"<<array[38]*75<<endl;
-								}
-								if(array[39]>=1)
-								{
-									cout<<"\t"<<array[39]<<" * Cream Doughnut        $"<<array[39]*50<<endl;
-								}
-								if(array[40]>=1)
-								{
-									cout<<"\t"<<array[40]<<" * Fruit Pie             $"<<array[40]*60<<endl;
-								}
-								if(array[41]>=1)
-								{
-									cout<<"\t"<<array[41]<<" * Stawberry Sundae      $"<<array[41]*80<<endl;
-								}
-								if(array[42]>=1)
-								{
-									cout<<"\t"<<array[42]<<" * Pastry                $"<<array[42]*60<<endl;
-								}
-								if(array[43]>=1)
-								{
-									cout<<"\t"<<array[43]<<" * Peanut Butter Bread   $"<<array[43]*90<<endl;
-								}
-								if(array[44]>=1)
-								{
-									cout<<"\t"<<array[44]<<" * Fruit Cake            $"<<array[44]*100<<endl;
-								}
-								cout<<"\t==============================================="<<endl;
-								cout<<"\tTOTAL AMOUNT              $"<<sum<<endl;
-								cout<<"\tPAID  AMOUNT              $"<<paidAmt<<endl;
-								cout<<"\t==============================================="<<endl;
-								cout<<"\t\t\tTHANK YOU"<<endl;
-								cout<<"\t==============================================="<<endl;
-								getch();
+								printReceipt(array,45,sum,paidAmt);
 							}
 							break;
 						}
@@ -2352,393 +822,13 @@ class project{
 								amt=paidAmt-sum;
 								cout<<"\nReturn amount Rs"<<amt;
 								getch();
-								system("cls");
-								cout<<"\t***********************************************"<<endl;
-								cout<<"\t\t\tRECEIPT"<<endl;
-								cout<<"\t***********************************************"<<endl;
-								if(array[0]>=1)
-								{
-									cout<<"\t"<<array[0]<<" * Gralic Potato          $"<<array[0]*60<<endl;
-								}
-								if(array[1]>=1)
-								{
-									cout<<"\t"<<array[1]<<" * Veg Chowmin            $"<<array[1]*50<<endl;
-								}
-								if(array[2]>=1)
-								{
-									cout<<"\t"<<array[2]<<" * Veg Momo               $"<<array[2]*60<<endl;
-								}
-								if(array[3]>=1)
-								{
-									cout<<"\t"<<array[3]<<" * Potato Chips           $"<<array[3]*50<<endl;
-								}
-								if(array[4]>=1)
-								{
-									cout<<"\t"<<array[4]<<" * Burger                 $"<<array[4]*90<<endl;
-								}
-								if(array[5]>=1)
-								{
-									cout<<"\t"<<array[5]<<" * Sandwitch              $"<<array[5]*70<<endl;
-								}
-								if(array[6]>=1)
-								{
-									cout<<"\t"<<array[6]<<" * Puri Tarkari           $"<<array[6]*80<<endl;
-								}
-								if(array[7]>=1)
-								{
-									cout<<"\t"<<array[7]<<" * Alu Paratha            $"<<array[7]*60<<endl;
-								}
-								if(array[8]>=1)
-								{
-									cout<<"\t"<<array[8]<<" * Frentch Fry            $"<<array[8]*60<<endl;
-								}
-								if(array[9]>=1)
-								{
-									cout<<"\t"<<array[9]<<" * Chicken Momo           $"<<array[9]*90<<endl;
-								}
-								if(array[10]>=1)
-								{
-									cout<<"\t"<<array[10]<<" * Chicken Chowmein      $"<<array[10]*80<<endl;
-								}
-								if(array[11]>=1)
-								{
-									cout<<"\t"<<array[11]<<" * Chicken Burger        $"<<array[11]*70<<endl;
-								}
-								if(array[12]>=1)
-								{
-									cout<<"\t"<<array[12]<<" * Chicken Biriyani      $"<<array[12]*100<<endl;
-								}
-								if(array[13]>=1)
-								{
-									cout<<"\t"<<array[13]<<" * Buff Momo             $"<<array[13]*70<<endl;
-								}
-								if(array[14]>=1)
-								{
-									cout<<"\t"<<array[14]<<" * Pork Momo             $"<<array[14]*70<<endl;
-								}
-								if(array[15]>=1)
-								{
-									cout<<"\t"<<array[15]<<" * Buff/Chicken Sausage  $"<<array[15]*300<<endl;
-								}
-								if(array[16]>=1)
-								{
-									cout<<"\t"<<array[16]<<" * Egg Kattiroll         $"<<array[16]*120<<endl;
-								}
-								if(array[17]>=1)
-								{
-									cout<<"\t"<<array[17]<<" * Chicken Kattiroll     $"<<array[17]*150<<endl;
-								}
-								if(array[18]>=1)
-								{
-									cout<<"\t"<<array[18]<<" * Coffee                $"<<array[18]*50<<endl;
-								}
-								if(array[19]>=1)
-								{
-									cout<<"\t"<<array[19]<<" * Cold Drinks           $"<<array[19]*40<<endl;
-								}
-								if(array[20]>=1)
-								{
-									cout<<"\t"<<array[20]<<" * Milk Tea              $"<<array[20]*25<<endl;
-								}
-								if(array[21]>=1)
-								{
-									cout<<"\t"<<array[21]<<" * Fruit Juice           $"<<array[21]*35<<endl;
-								}
-								if(array[22]>=1)
-								{
-									cout<<"\t"<<array[22]<<" * Chocolate Milk        $"<<array[22]*30<<endl;
-								}
-								if(array[23]>=1)
-								{
-									cout<<"\t"<<array[23]<<" * Capuccino             $"<<array[23]*50<<endl;
-								}
-								if(array[24]>=1)
-								{
-									cout<<"\t"<<array[24]<<" * Americano             $"<<array[24]*60<<endl;
-								}
-								if(array[25]>=1)
-								{
-									cout<<"\t"<<array[25]<<" * Espresso              $"<<array[25]*50<<endl;
-								}
-								if(array[26]>=1)
-								{
-									cout<<"\t"<<array[26]<<" * Latte                 $"<<array[26]*80<<endl;
-								}
-								if(array[27]>=1)
-								{
-									cout<<"\t"<<array[27]<<" * Chatpate              $"<<array[27]*50<<endl;
-								}
-								if(array[28]>=1)
-								{
-									cout<<"\t"<<array[28]<<" * Pop Corn              $"<<array[28]*50<<endl;
-								}
-								if(array[29]>=1)
-								{
-									cout<<"\t"<<array[29]<<" * Fruit Salad           $"<<array[29]*65<<endl;
-								}
-								if(array[30]>=1)
-								{
-									cout<<"\t"<<array[30]<<" * Jelly Cup with Fruit  $"<<array[30]*75<<endl;
-								}
-								if(array[31]>=1)
-								{
-									cout<<"\t"<<array[31]<<" * Cookies               $"<<array[31]*60<<endl;
-								}
-								if(array[32]>=1)
-								{
-									cout<<"\t"<<array[32]<<" * Muffins               $"<<array[32]*50<<endl;
-								}
-								if(array[33]>=1)
-								{
-									cout<<"\t"<<array[33]<<" * Chips                 $"<<array[33]*40<<endl;
-								}
-								if(array[34]>=1)
-								{
-									cout<<"\t"<<array[34]<<" * Current Noodles       $"<<array[34]*60<<endl;
-								}
-								if(array[35]>=1)
-								{
-									cout<<"\t"<<array[35]<<" * Nimkin/Dalmot         $"<<array[35]*40<<endl;
-								}
-								if(array[36]>=1)
-								{
-									cout<<"\t"<<array[36]<<" * Ice Cream             $"<<array[36]*70<<endl;
-								}
-								if(array[37]>=1)
-								{
-									cout<<"\t"<<array[37]<<" * Black/White Forest    $"<<array[37]*90<<endl;
-								}
-								if(array[38]>=1)
-								{
-									cout<<"\t"<<array[38]<<" * Waffle                $"<<array[38]*75<<endl;
-								}
-								if(array[39]>=1)
-								{
-									cout<<"\t"<<array[39]<<" * Cream Doughnut        $"<<array[39]*50<<endl;
-								}
-								if(array[40]>=1)
-								{
-									cout<<"\t"<<array[40]<<" * Fruit Pie             $"<<array[40]*60<<endl;
-								}
-								if(array[41]>=1)
-								{
-									cout<<"\t"<<array[41]<<" * Stawberry Sundae      $"<<array[41]*80<<endl;
-								}
-								if(array[42]>=1)
-								{
-									cout<<"\t"<<array[42]<<" * Pastry                $"<<array[42]*60<<endl;
-								}
-								if(array[43]>=1)
-								{
-									cout<<"\t"<<array[43]<<" * Peanut Butter Bread   $"<<array[43]*90<<endl;
-								}
-								if(array[44]>=1)
-								{
-									cout<<"\t"<<array[44]<<" * Fruit Cake            $"<<array[44]*100<<endl;
-								}
-								cout<<"\t==============================================="<<endl;
-								cout<<"\tTOTAL AMOUNT              $"<<sum<<endl;
-								cout<<"\tPAID  AMOUNT              $"<<paidAmt<<endl;
-								cout<<"\t==============================================="<<endl;
-								cout<<"\t\t\tTHANK YOU"<<endl;
-								cout<<"\t==============================================="<<endl;
-								getch();
+								printReceipt(array,45,sum,paidAmt);
 							}
 							else if(paidAmt<sum){
 								amt=sum-paidAmt;
 								cout<<"\nYour due amount is Rs"<<amt;
 								getch();
-								system("cls");
-								cout<<"\t***********************************************"<<endl;
-								cout<<"\t\t\tRECEIPT"<<endl;
-								cout<<"\t***********************************************"<<endl;
-								if(array[0]>=1)
-								{
-									cout<<"\t"<<array[0]<<" * Gralic Potato          $"<<array[0]*60<<endl;
-								}
-								if(array[1]>=1)
-								{
-									cout<<"\t"<<array[1]<<" * Veg Chowmin            $"<<array[1]*50<<endl;
-								}
-								if(array[2]>=1)
-								{
-									cout<<"\t"<<array[2]<<" * Veg Momo               $"<<array[2]*60<<endl;
-								}
-								if(array[3]>=1)
-								{
-									cout<<"\t"<<array[3]<<" * Potato Chips           $"<<array[3]*50<<endl;
-								}
-								if(array[4]>=1)
-								{
-									cout<<"\t"<<array[4]<<" * Burger                 $"<<array[4]*90<<endl;
-								}
-								if(array[5]>=1)
-								{
-									cout<<"\t"<<array[5]<<" * Sandwitch              $"<<array[5]*70<<endl;
-								}
-								if(array[6]>=1)
-								{
-									cout<<"\t"<<array[6]<<" * Puri Tarkari           $"<<array[6]*80<<endl;
-								}
-								if(array[7]>=1)
-								{
-									cout<<"\t"<<array[7]<<" * Alu Paratha            $"<<array[7]*60<<endl;
-								}
-								if(array[8]>=1)
-								{
-									cout<<"\t"<<array[8]<<" * Frentch Fry            $"<<array[8]*60<<endl;
-								}
-								if(array[9]>=1)
-								{
-									cout<<"\t"<<array[9]<<" * Chicken Momo           $"<<array[9]*90<<endl;
-								}
-								if(array[10]>=1)
-								{
-									cout<<"\t"<<array[10]<<" * Chicken Chowmein      $"<<array[10]*80<<endl;
-								}
-								if(array[11]>=1)
-								{
-									cout<<"\t"<<array[11]<<" * Chicken Burger        $"<<array[11]*70<<endl;
-								}
-								if(array[12]>=1)
-								{
-									cout<<"\t"<<array[12]<<" * Chicken Biriyani      $"<<array[12]*100<<endl;
-								}
-								if(array[13]>=1)
-								{
-									cout<<"\t"<<array[13]<<" * Buff Momo             $"<<array[13]*70<<endl;
-								}
-								if(array[14]>=1)
-								{
-									cout<<"\t"<<array[14]<<" * Pork Momo             $"<<array[14]*70<<endl;
-								}
-								if(array[15]>=1)
-								{
-									cout<<"\t"<<array[15]<<" * Buff/Chicken Sausage  $"<<array[15]*300<<endl;
-								}
-								if(array[16]>=1)
-								{
-									cout<<"\t"<<array[16]<<" * Egg Kattiroll         $"<<array[16]*120<<endl;
-								}
-								if(array[17]>=1)
-								{
-									cout<<"\t"<<array[17]<<" * Chicken Kattiroll     $"<<array[17]*150<<endl;
-								}
-								if(array[18]>=1)
-								{
-									cout<<"\t"<<array[18]<<" * Coffee                $"<<array[18]*50<<endl;
-								}
-								if(array[19]>=1)
-								{
-									cout<<"\t"<<array[19]<<" * Cold Drinks           $"<<array[19]*40<<endl;
-								}
-								if(array[20]>=1)
-								{
-									cout<<"\t"<<array[20]<<" * Milk Tea              $"<<array[20]*25<<endl;
-								}
-								if(array[21]>=1)
-								{
-									cout<<"\t"<<array[21]<<" * Fruit Juice           $"<<array[21]*35<<endl;
-								}
-								if(array[22]>=1)
-								{
-									cout<<"\t"<<array[22]<<" * Chocolate Milk        $"<<array[22]*30<<endl;
-								}
-								if(array[23]>=1)
-								{
-									cout<<"\t"<<array[23]<<" * Capuccino             $"<<array[23]*50<<endl;
-								}
-								if(array[24]>=1)
-								{
-									cout<<"\t"<<array[24]<<" * Americano             $"<<array[24]*60<<endl;
-								}
-								if(array[25]>=1)
-								{
-									cout<<"\t"<<array[25]<<" * Espresso              $"<<array[25]*50<<endl;
-								}
-								if(array[26]>=1)
-								{
-									cout<<"\t"<<array[26]<<" * Latte                 $"<<array[26]*80<<endl;
-								}
-								if(array[27]>=1)
-								{
-									cout<<"\t"<<array[27]<<" * Chatpate              $"<<array[27]*50<<endl;
-								}
-								if(array[28]>=1)
-								{
-									cout<<"\t"<<array[28]<<" * Pop Corn              $"<<array[28]*50<<endl;
-								}
-								if(array[29]>=1)
-								{
-									cout<<"\t"<<array[29]<<" * Fruit Salad           $"<<array[29]*65<<endl;
-								}
-								if(array[30]>=1)
-								{
-									cout<<"\t"<<array[30]<<" * Jelly Cup with Fruit  $"<<array[30]*75<<endl;
-								}
-								if(array[31]>=1)
-								{
-									cout<<"\t"<<array[31]<<" * Cookies               $"<<array[31]*60<<endl;
-								}
-								if(array[32]>=1)
-								{
-									cout<<"\t"<<array[32]<<" * Muffins               $"<<array[32]*50<<endl;
-								}
-								if(array[33]>=1)
-								{
-									cout<<"\t"<<array[33]<<" * Chips                 $"<<array[33]*40<<endl;
-								}
-								if(array[34]>=1)
-								{
-									cout<<"\t"<<array[34]<<" * Current Noodles       $"<<array[34]*60<<endl;
-								}
-								if(array[35]>=1)
-								{
-									cout<<"\t"<<array[35]<<" * Nimkin/Dalmot         $"<<array[35]*40<<endl;
-								}
-								if(array[36]>=1)
-								{
-									cout<<"\t"<<array[36]<<" * Ice Cream             $"<<array[36]*70<<endl;
-								}
-								if(array[37]>=1)
-								{
-									cout<<"\t"<<array[37]<<" * Black/White Forest    $"<<array[37]*90<<endl;
-								}
-								if(array[38]>=1)
-								{
-									cout<<"\t"<<array[38]<<" * Waffle                $"<<array[38]*75<<endl;
-								}
-								if(array[39]>=1)
-								{
-									cout<<"\t"<<array[39]<<" * Cream Doughnut        $"<<array[39]*50<<endl;
-								}
-								if(array[40]>=1)
-								{
-									cout<<"\t"<<array[40]<<" * Fruit Pie             $"<<array[40]*60<<endl;
-								}
-								if(array[41]>=1)
-								{
-									cout<<"\t"<<array[41]<<" * Stawberry Sundae      $"<<array[41]*80<<endl;
-								}
-								if(array[42]>=1)
-								{
-									cout<<"\t"<<array[42]<<" * Pastry                $"<<array[42]*60<<endl;
-								}
-								if(array[43]>=1)
-								{
-									cout<<"\t"<<array[43]<<" * Peanut Butter Bread   $"<<array[43]*90<<endl;
-								}
-								if(array[44]>=1)
-								{
-									cout<<"\t"<<array[44]<<" * Fruit Cake            $"<<array[44]*100<<endl;
-								}
-								cout<<"\t==============================================="<<endl;
-								cout<<"\tTOTAL AMOUNT              $"<<sum<<endl;
-								cout<<"\tPAID  AMOUNT              $"<<paidAmt<<endl;
-								cout<<"\t==============================================="<<endl;
-								cout<<"\t\t\tTHANK YOU"<<endl;
-								cout<<"\t==============================================="<<endl;
-								getch();
+								printReceipt(array,45,sum,paidAmt);
 								ofstream a;
 								s.paid=amt;
 								a.open("liability.dat", ios :: app);{
@@ -2749,197 +839,7 @@ class project{
 							else {
 								cout<<"Return amount is Rs 0";
 								getch();
-								system("cls");
-								cout<<"\t***********************************************"<<endl;
-								cout<<"\t\t\tRECEIPT"<<endl;
-								cout<<"\t***********************************************"<<endl;
-								if(array[0]>=1)
-								{
-									cout<<"\t"<<array[0]<<" * Gralic Potato          $"<<array[0]*60<<endl;
-								}
-								if(array[1]>=1)
-								{
-									cout<<"\t"<<array[1]<<" * Veg Chowmin            $"<<array[1]*50<<endl;
-								}
-								if(array[2]>=1)
-								{
-									cout<<"\t"<<array[2]<<" * Veg Momo               $"<<array[2]*60<<endl;
-								}
-								if(array[3]>=1)
-								{
-									cout<<"\t"<<array[3]<<" * Potato Chips           $"<<array[3]*50<<endl;
-								}
-								if(array[4]>=1)
-								{
-									cout<<"\t"<<array[4]<<" * Burger                 $"<<array[4]*90<<endl;
-								}
-								if(array[5]>=1)
-								{
-									cout<<"\t"<<array[5]<<" * Sandwitch              $"<<array[5]*70<<endl;
-								}
-								if(array[6]>=1)
-								{
-									cout<<"\t"<<array[6]<<" * Puri Tarkari           $"<<array[6]*80<<endl;
-								}
-								if(array[7]>=1)
-								{
-									cout<<"\t"<<array[7]<<" * Alu Paratha            $"<<array[7]*60<<endl;
-								}
-								if(array[8]>=1)
-								{
-									cout<<"\t"<<array[8]<<" * Frentch Fry            $"<<array[8]*60<<endl;
-								}
-								if(array[9]>=1)
-								{
-									cout<<"\t"<<array[9]<<" * Chicken Momo           $"<<array[9]*90<<endl;
-								}
-								if(array[10]>=1)
-								{
-									cout<<"\t"<<array[10]<<" * Chicken Chowmein      $"<<array[10]*80<<endl;
-								}
-								if(array[11]>=1)
-								{
-									cout<<"\t"<<array[11]<<" * Chicken Burger        $"<<array[11]*70<<endl;
-								}
-								if(array[12]>=1)
-								{
-									cout<<"\t"<<array[12]<<" * Chicken Biriyani      $"<<array[12]*100<<endl;
-								}
-								if(array[13]>=1)
-								{
-									cout<<"\t"<<array[13]<<" * Buff Momo             $"<<array[13]*70<<endl;
-								}
-								if(array[14]>=1)
-								{
-									cout<<"\t"<<array[14]<<" * Pork Momo             $"<<array[14]*70<<endl;
-								}
-								if(array[15]>=1)
-								{
-									cout<<"\t"<<array[15]<<" * Buff/Chicken Sausage  $"<<array[15]*300<<endl;
-								}
-								if(array[16]>=1)
-								{
-									cout<<"\t"<<array[16]<<" * Egg Kattiroll         $"<<array[16]*120<<endl;
-								}
-								if(array[17]>=1)
-								{
-									cout<<"\t"<<array[17]<<" * Chicken Kattiroll     $"<<array[17]*150<<endl;
-								}
-								if(array[18]>=1)
-								{
-									cout<<"\t"<<array[18]<<" * Coffee                $"<<array[18]*50<<endl;
-								}
-								if(array[19]>=1)
-								{
-									cout<<"\t"<<array[19]<<" * Cold Drinks           $"<<array[19]*40<<endl;
-								}
-								if(array[20]>=1)
-								{
-									cout<<"\t"<<array[20]<<" * Milk Tea              $"<<array[20]*25<<endl;
-								}
-								if(array[21]>=1)
-								{
-									cout<<"\t"<<array[21]<<" * Fruit Juice           $"<<array[21]*35<<endl;
-								}
-								if(array[22]>=1)
-								{
-									cout<<"\t"<<array[22]<<" * Chocolate Milk        $"<<array[22]*30<<endl;
-								}
-								if(array[23]>=1)
-								{
-									cout<<"\t"<<array[23]<<" * Capuccino             $"<<array[23]*50<<endl;
-								}
-								if(array[24]>=1)
-								{
-									cout<<"\t"<<array[24]<<" * Americano             $"<<array[24]*60<<endl;
-								}
-								if(array[25]>=1)
-								{
-									cout<<"\t"<<array[25]<<" * Espresso              $"<<array[25]*50<<endl;
-								}
-								if(array[26]>=1)
-								{
-									cout<<"\t"<<array[26]<<" * Latte                 $"<<array[26]*80<<endl;
-								}
-								if(array[27]>=1)
-								{
-									cout<<"\t"<<array[27]<<" * Chatpate              $"<<array[27]*50<<endl;
-								}
-								if(array[28]>=1)
-								{
-									cout<<"\t"<<array[28]<<" * Pop Corn              $"<<array[28]*50<<endl;
-								}
-								if(array[29]>=1)
-								{
-									cout<<"\t"<<array[29]<<" * Fruit Salad           $"<<array[29]*65<<endl;
-								}
-								if(array[30]>=1)
-								{
-									cout<<"\t"<<array[30]<<" * Jelly Cup with Fruit  $"<<array[30]*75<<endl;
-								}
-								if(array[31]>=1)
-								{
-									cout<<"\t"<<array[31]<<" * Cookies               $"<<array[31]*60<<endl;
-								}
-								if(array[32]>=1)
-								{
-									cout<<"\t"<<array[32]<<" * Muffins               $"<<array[32]*50<<endl;
-								}
-								if(array[33]>=1)
-								{
-									cout<<"\t"<<array[33]<<" * Chips                 $"<<array[33]*40<<endl;
-								}
-								if(array[34]>=1)
-								{
-									cout<<"\t"<<array[34]<<" * Current Noodles       $"<<array[34]*60<<endl;
-								}
-								if(array[35]>=1)
-								{
-									cout<<"\t"<<array[35]<<" * Nimkin/Dalmot         $"<<array[35]*40<<endl;
-								}
-								if(array[36]>=1)
-								{
-									cout<<"\t"<<array[36]<<" * Ice Cream             $"<<array[36]*70<<endl;
-								}
-								if(array[37]>=1)
-								{
-									cout<<"\t"<<array[37]<<" * Black/White Forest    $"<<array[37]*90<<endl;
-								}
-								if(array[38]>=1)
-								{
-									cout<<"\t"<<array[38]<<" * Waffle                $"<<array[38]*75<<endl;
-								}
-								if(array[39]>=1)
-								{
-									cout<<"\t"<<array[39]<<" * Cream Doughnut        $"<<array[39]*50<<endl;
-								}
-								if(array[40]>=1)
-								{
-									cout<<"\t"<<array[40]<<" * Fruit Pie             $"<<array[40]*60<<endl;
-								}
-								if(array[41]>=1)
-								{
-									cout<<"\t"<<array[41]<<" * Stawberry Sundae      $"<<array[41]*80<<endl;
-								}
-								if(array[42]>=1)
-								{
-									cout<<"\t"<<array[42]<<" * Pastry                $"<<array[42]*60<<endl;
-								}
-								if(array[43]>=1)
-								{
-									cout<<"\t"<<array[43]<<" * Peanut Butter Bread   $"<<array[43]*90<<endl;
-								}
-								if(array[44]>=1)
-								{
-									cout<<"\t"<<array[44]<<" * Fruit Cake            $"<<array[44]*100<<endl;
-								}
-								cout<<"\t==============================================="<<endl;
-								cout<<"\tTOTAL AMOUNT              $"<<sum<<endl;
-								cout<<"\tPAID  AMOUNT              $"<<paidAmt<<endl;
-								cout<<"\t==============================================="<<endl;
-								cout<<"\t\t\tTHANK YOU"<<endl;
-								cout<<"\t==============================================="<<endl;
-								getch();
+								printReceipt(array,45,sum,paidAmt);
 							}
 							break;
 						}
@@ -3053,197 +953,7 @@ class project{
 								amt=paidAmt-sum;
 								cout<<"\nReturn amount Rs"<<amt;
 								getch();
-								system("cls");
-								cout<<"\t***********************************************"<<endl;
-								cout<<"\t\t\tRECEIPT"<<endl;
-								cout<<"\t***********************************************"<<endl;
-								if(array[0]>=1)
-								{
-									cout<<"\t"<<array[0]<<" * Gralic Potato          $"<<array[0]*60<<endl;
-								}
-								if(array[1]>=1)
-								{
-									cout<<"\t"<<array[1]<<" * Veg Chowmin            $"<<array[1]*50<<endl;
-								}
-								if(array[2]>=1)
-								{
-									cout<<"\t"<<array[2]<<" * Veg Momo               $"<<array[2]*60<<endl;
-								}
-								if(array[3]>=1)
-								{
-									cout<<"\t"<<array[3]<<" * Potato Chips           $"<<array[3]*50<<endl;
-								}
-								if(array[4]>=1)
-								{
-									cout<<"\t"<<array[4]<<" * Burger                 $"<<array[4]*90<<endl;
-								}
-								if(array[5]>=1)
-								{
-									cout<<"\t"<<array[5]<<" * Sandwitch              $"<<array[5]*70<<endl;
-								}
-								if(array[6]>=1)
-								{
-									cout<<"\t"<<array[6]<<" * Puri Tarkari           $"<<array[6]*80<<endl;
-								}
-								if(array[7]>=1)
-								{
-									cout<<"\t"<<array[7]<<" * Alu Paratha            $"<<array[7]*60<<endl;
-								}
-								if(array[8]>=1)
-								{
-									cout<<"\t"<<array[8]<<" * Frentch Fry            $"<<array[8]*60<<endl;
-								}
-								if(array[9]>=1)
-								{
-									cout<<"\t"<<array[9]<<" * Chicken Momo           $"<<array[9]*90<<endl;
-								}
-								if(array[10]>=1)
-								{
-									cout<<"\t"<<array[10]<<" * Chicken Chowmein      $"<<array[10]*80<<endl;
-								}
-								if(array[11]>=1)
-								{
-									cout<<"\t"<<array[11]<<" * Chicken Burger        $"<<array[11]*70<<endl;
-								}
-								if(array[12]>=1)
-								{
-									cout<<"\t"<<array[12]<<" * Chicken Biriyani      $"<<array[12]*100<<endl;
-								}
-								if(array[13]>=1)
-								{
-									cout<<"\t"<<array[13]<<" * Buff Momo             $"<<array[13]*70<<endl;
-								}
-								if(array[14]>=1)
-								{
-									cout<<"\t"<<array[14]<<" * Pork Momo             $"<<array[14]*70<<endl;
-								}
-								if(array[15]>=1)
-								{
-									cout<<"\t"<<array[15]<<" * Buff/Chicken Sausage  $"<<array[15]*300<<endl;
-								}
-								if(array[16]>=1)
-								{
-									cout<<"\t"<<array[16]<<" * Egg Kattiroll         $"<<array[16]*120<<endl;
-								}
-								if(array[17]>=1)
-								{
-									cout<<"\t"<<array[17]<<" * Chicken Kattiroll     $"<<array[17]*150<<endl;
-								}
-								if(array[18]>=1)
-								{
-									cout<<"\t"<<array[18]<<" * Coffee                $"<<array[18]*50<<endl;
-								}
-								if(array[19]>=1)
-								{
-									cout<<"\t"<<array[19]<<" * Cold Drinks           $"<<array[19]*40<<endl;
-								}
-								if(array[20]>=1)
-								{
-									cout<<"\t"<<array[20]<<" * Milk Tea              $"<<array[20]*25<<endl;
-								}
-								if(array[21]>=1)
-								{
-									cout<<"\t"<<array[21]<<" * Fruit Juice           $"<<array[21]*35<<endl;
-								}
-								if(array[22]>=1)
-								{
-									cout<<"\t"<<array[22]<<" * Chocolate Milk        $"<<array[22]*30<<endl;
-								}
-								if(array[23]>=1)
-								{
-									cout<<"\t"<<array[23]<<" * Capuccino             $"<<array[23]*50<<endl;
-								}
-								if(array[24]>=1)
-								{
-									cout<<"\t"<<array[24]<<" * Americano             $"<<array[24]*60<<endl;
-								}
-								if(array[25]>=1)
-								{
-									cout<<"\t"<<array[25]<<" * Espresso              $"<<array[25]*50<<endl;
-								}
-								if(array[26]>=1)
-								{
-									cout<<"\t"<<array[26]<<" * Latte                 $"<<array[26]*80<<endl;
-								}
-								if(array[27]>=1)
-								{
-									cout<<"\t"<<array[27]<<" * Chatpate              $"<<array[27]*50<<endl;
-								}
-								if(array[28]>=1)
-								{
-									cout<<"\t"<<array[28]<<" * Pop Corn              $"<<array[28]*50<<endl;
-								}
-								if(array[29]>=1)
-								{
-									cout<<"\t"<<array[29]<<" * Fruit Salad           $"<<array[29]*65<<endl;
-								}
-								if(array[30]>=1)
-								{
-									cout<<"\t"<<array[30]<<" * Jelly Cup with Fruit  $"<<array[30]*75<<endl;
-								}
-								if(array[31]>=1)
-								{
-									cout<<"\t"<<array[31]<<" * Cookies               $"<<array[31]*60<<endl;
-								}
-								if(array[32]>=1)
-								{
-									cout<<"\t"<<array[32]<<" * Muffins               $"<<array[32]*50<<endl;
-								}
-								if(array[33]>=1)
-								{
-									cout<<"\t"<<array[33]<<" * Chips                 $"<<array[33]*40<<endl;
-								}
-								if(array[34]>=1)
-								{
-									cout<<"\t"<<array[34]<<" * Current Noodles       $"<<array[34]*60<<endl;
-								}
-								if(array[35]>=1)
-								{
-									cout<<"\t"<<array[35]<<" * Nimkin/Dalmot         $"<<array[35]*40<<endl;
-								}
-								if(array[36]>=1)
-								{
-									cout<<"\t"<<array[36]<<" * Ice Cream             $"<<array[36]*70<<endl;
-								}
-								if(array[37]>=1)
-								{
-									cout<<"\t"<<array[37]<<" * Black/White Forest    $"<<array[37]*90<<endl;
-								}
-								if(array[38]>=1)
-								{
-									cout<<"\t"<<array[38]<<" * Waffle                $"<<array[38]*75<<endl;
-								}
-								if(array[39]>=1)
-								{
-									cout<<"\t"<<array[39]<<" * Cream Doughnut        $"<<array[39]*50<<endl;
-								}
-								if(array[40]>=1)
-								{
-									cout<<"\t"<<array[40]<<" * Fruit Pie             $"<<array[40]*60<<endl;
-								}
-								if(array[41]>=1)
-								{
-									cout<<"\t"<<array[41]<<" * Stawberry Sundae      $"<<array[41]*80<<endl;
-								}
-								if(array[42]>=1)
-								{
-									cout<<"\t"<<array[42]<<" * Pastry                $"<<array[42]*60<<endl;
-								}
-								if(array[43]>=1)
-								{
-									cout<<"\t"<<array[43]<<" * Peanut Butter Bread   $"<<array[43]*90<<endl;
-								}
-								if(array[44]>=1)
-								{
-									cout<<"\t"<<array[44]<<" * Fruit Cake            $"<<array[44]*100<<endl;
-								}
-								cout<<"\t==============================================="<<endl;
-								cout<<"\tTOTAL AMOUNT              $"<<sum<<endl;
-								cout<<"\tPAID  AMOUNT              $"<<paidAmt<<endl;
-								cout<<"\t==============================================="<<endl;
-								cout<<"\t\t\tTHANK YOU"<<endl;
-								cout<<"\t==============================================="<<endl;
-								getch();
+								printReceipt(array,45,sum,paidAmt);
 							}
 							else if(paidAmt<sum){
 								amt=sum-paidAmt;
@@ -3255,392 +965,12 @@ class project{
 									a<<s.id<<"\t"<<s.bill<<"\t\t"<<s.paid<<endl;
 									a.close();
 								}
-								system("cls");
-								cout<<"\t***********************************************"<<endl;
-								cout<<"\t\t\tRECEIPT"<<endl;
-								cout<<"\t***********************************************"<<endl;
-								if(array[0]>=1)
-								{
-									cout<<"\t"<<array[0]<<" * Gralic Potato          $"<<array[0]*60<<endl;
-								}
-								if(array[1]>=1)
-								{
-									cout<<"\t"<<array[1]<<" * Veg Chowmin            $"<<array[1]*50<<endl;
-								}
-								if(array[2]>=1)
-								{
-									cout<<"\t"<<array[2]<<" * Veg Momo               $"<<array[2]*60<<endl;
-								}
-								if(array[3]>=1)
-								{
-									cout<<"\t"<<array[3]<<" * Potato Chips           $"<<array[3]*50<<endl;
-								}
-								if(array[4]>=1)
-								{
-									cout<<"\t"<<array[4]<<" * Burger                 $"<<array[4]*90<<endl;
-								}
-								if(array[5]>=1)
-								{
-									cout<<"\t"<<array[5]<<" * Sandwitch              $"<<array[5]*70<<endl;
-								}
-								if(array[6]>=1)
-								{
-									cout<<"\t"<<array[6]<<" * Puri Tarkari           $"<<array[6]*80<<endl;
-								}
-								if(array[7]>=1)
-								{
-									cout<<"\t"<<array[7]<<" * Alu Paratha            $"<<array[7]*60<<endl;
-								}
-								if(array[8]>=1)
-								{
-									cout<<"\t"<<array[8]<<" * Frentch Fry            $"<<array[8]*60<<endl;
-								}
-								if(array[9]>=1)
-								{
-									cout<<"\t"<<array[9]<<" * Chicken Momo           $"<<array[9]*90<<endl;
-								}
-								if(array[10]>=1)
-								{
-									cout<<"\t"<<array[10]<<" * Chicken Chowmein      $"<<array[10]*80<<endl;
-								}
-								if(array[11]>=1)
-								{
-									cout<<"\t"<<array[11]<<" * Chicken Burger        $"<<array[11]*70<<endl;
-								}
-								if(array[12]>=1)
-								{
-									cout<<"\t"<<array[12]<<" * Chicken Biriyani      $"<<array[12]*100<<endl;
-								}
-								if(array[13]>=1)
-								{
-									cout<<"\t"<<array[13]<<" * Buff Momo             $"<<array[13]*70<<endl;
-								}
-								if(array[14]>=1)
-								{
-									cout<<"\t"<<array[14]<<" * Pork Momo             $"<<array[14]*70<<endl;
-								}
-								if(array[15]>=1)
-								{
-									cout<<"\t"<<array[15]<<" * Buff/Chicken Sausage  $"<<array[15]*300<<endl;
-								}
-								if(array[16]>=1)
-								{
-									cout<<"\t"<<array[16]<<" * Egg Kattiroll         $"<<array[16]*120<<endl;
-								}
-								if(array[17]>=1)
-								{
-									cout<<"\t"<<array[17]<<" * Chicken Kattiroll     $"<<array[17]*150<<endl;
-								}
-								if(array[18]>=1)
-								{
-									cout<<"\t"<<array[18]<<" * Coffee                $"<<array[18]*50<<endl;
-								}
-								if(array[19]>=1)
-								{
-									cout<<"\t"<<array[19]<<" * Cold Drinks           $"<<array[19]*40<<endl;
-								}
-								if(array[20]>=1)
-								{
-									cout<<"\t"<<array[20]<<" * Milk Tea              $"<<array[20]*25<<endl;
-								}
-								if(array[21]>=1)
-								{
-									cout<<"\t"<<array[21]<<" * Fruit Juice           $"<<array[21]*35<<endl;
-								}
-								if(array[22]>=1)
-								{
-									cout<<"\t"<<array[22]<<" * Chocolate Milk        $"<<array[22]*30<<endl;
-								}
-								if(array[23]>=1)
-								{
-									cout<<"\t"<<array[23]<<" * Capuccino             $"<<array[23]*50<<endl;
-								}
-								if(array[24]>=1)
-								{
-									cout<<"\t"<<array[24]<<" * Americano             $"<<array[24]*60<<endl;
-								}
-								if(array[25]>=1)
-								{
-									cout<<"\t"<<array[25]<<" * Espresso              $"<<array[25]*50<<endl;
-								}
-								if(array[26]>=1)
-								{
-									cout<<"\t"<<array[26]<<" * Latte                 $"<<array[26]*80<<endl;
-								}
-								if(array[27]>=1)
-								{
-									cout<<"\t"<<array[27]<<" * Chatpate              $"<<array[27]*50<<endl;
-								}
-								if(array[28]>=1)
-								{
-									cout<<"\t"<<array[28]<<" * Pop Corn              $"<<array[28]*50<<endl;
-								}
-								if(array[29]>=1)
-								{
-									cout<<"\t"<<array[29]<<" * Fruit Salad           $"<<array[29]*65<<endl;
-								}
-								if(array[30]>=1)
-								{
-									cout<<"\t"<<array[30]<<" * Jelly Cup with Fruit  $"<<array[30]*75<<endl;
-								}
-								if(array[31]>=1)
-								{
-									cout<<"\t"<<array[31]<<" * Cookies               $"<<array[31]*60<<endl;
-								}
-								if(array[32]>=1)
-								{
-									cout<<"\t"<<array[32]<<" * Muffins               $"<<array[32]*50<<endl;
-								}
-								if(array[33]>=1)
-								{
-									cout<<"\t"<<array[33]<<" * Chips                 $"<<array[33]*40<<endl;
-								}
-								if(array[34]>=1)
-								{
-									cout<<"\t"<<array[34]<<" * Current Noodles       $"<<array[34]*60<<endl;
-								}
-								if(array[35]>=1)
-								{
-									cout<<"\t"<<array[35]<<" * Nimkin/Dalmot         $"<<array[35]*40<<endl;
-								}
-								if(array[36]>=1)
-								{
-									cout<<"\t"<<array[36]<<" * Ice Cream             $"<<array[36]*70<<endl;
-								}
-								if(array[37]>=1)
-								{
-									cout<<"\t"<<array[37]<<" * Black/White Forest    $"<<array[37]*90<<endl;
-								}
-								if(array[38]>=1)
-								{
-									cout<<"\t"<<array[38]<<" * Waffle                $"<<array[38]*75<<endl;
-								}
-								if(array[39]>=1)
-								{
-									cout<<"\t"<<array[39]<<" * Cream Doughnut        $"<<array[39]*50<<endl;
-								}
-								if(array[40]>=1)
-								{
-									cout<<"\t"<<array[40]<<" * Fruit Pie             $"<<array[40]*60<<endl;
-								}
-								if(array[41]>=1)
-								{
-									cout<<"\t"<<array[41]<<" * Stawberry Sundae      $"<<array[41]*80<<endl;
-								}
-								if(array[42]>=1)
-								{
-									cout<<"\t"<<array[42]<<" * Pastry                $"<<array[42]*60<<endl;
-								}
-								if(array[43]>=1)
-								{
-									cout<<"\t"<<array[43]<<" * Peanut Butter Bread   $"<<array[43]*90<<endl;
-								}
-								if(array[44]>=1)
-								{
-									cout<<"\t"<<array[44]<<" * Fruit Cake            $"<<array[44]*100<<endl;
-								}
-								cout<<"\t==============================================="<<endl;
-								cout<<"\tTOTAL AMOUNT              $"<<sum<<endl;
-								cout<<"\tPAID  AMOUNT              $"<<paidAmt<<endl;
-								cout<<"\t==============================================="<<endl;
-								cout<<"\t\t\tTHANK YOU"<<endl;
-								cout<<"\t==============================================="<<endl;
-								getch();
+								printReceipt(array,45,sum,paidAmt);
 							}
 							else {
 								cout<<"Return amount is Rs 0";
 								getch();
-								system("cls");
-								cout<<"\t***********************************************"<<endl;
-								cout<<"\t\t\tRECEIPT"<<endl;
-								cout<<"\t***********************************************"<<endl;
-								if(array[0]>=1)
-								{
-									cout<<"\t"<<array[0]<<" * Gralic Potato          $"<<array[0]*60<<endl;
-								}
-								if(array[1]>=1)
-								{
-									cout<<"\t"<<array[1]<<" * Veg Chowmin            $"<<array[1]*50<<endl;
-								}
-								if(array[2]>=1)
-								{
-									cout<<"\t"<<array[2]<<" * Veg Momo               $"<<array[2]*60<<endl;
-								}
-								if(array[3]>=1)
-								{
-									cout<<"\t"<<array[3]<<" * Potato Chips           $"<<array[3]*50<<endl;
-								}
-								if(array[4]>=1)
-								{
-									cout<<"\t"<<array[4]<<" * Burger                 $"<<array[4]*90<<endl;
-								}
-								if(array[5]>=1)
-								{
-									cout<<"\t"<<array[5]<<" * Sandwitch              $"<<array[5]*70<<endl;
-								}
-								if(array[6]>=1)
-								{
-									cout<<"\t"<<array[6]<<" * Puri Tarkari           $"<<array[6]*80<<endl;
-								}
-								if(array[7]>=1)
-								{
-									cout<<"\t"<<array[7]<<" * Alu Paratha            $"<<array[7]*60<<endl;
-								}
-								if(array[8]>=1)
-								{
-									cout<<"\t"<<array[8]<<" * Frentch Fry            $"<<array[8]*60<<endl;
-								}
-								if(array[9]>=1)
-								{
-									cout<<"\t"<<array[9]<<" * Chicken Momo           $"<<array[9]*90<<endl;
-								}
-								if(array[10]>=1)
-								{
-									cout<<"\t"<<array[10]<<" * Chicken Chowmein      $"<<array[10]*80<<endl;
-								}
-								if(array[11]>=1)
-								{
-									cout<<"\t"<<array[11]<<" * Chicken Burger        $"<<array[11]*70<<endl;
-								}
-								if(array[12]>=1)
-								{
-									cout<<"\t"<<array[12]<<" * Chicken Biriyani      $"<<array[12]*100<<endl;
-								}
-								if(array[13]>=1)
-								{
-									cout<<"\t"<<array[13]<<" * Buff Momo             $"<<array[13]*70<<endl;
-								}
-								if(array[14]>=1)
-								{
-									cout<<"\t"<<array[14]<<" * Pork Momo             $"<<array[14]*70<<endl;
-								}
-								if(array[15]>=1)
-								{
-									cout<<"\t"<<array[15]<<" * Buff/Chicken Sausage  $"<<array[15]*300<<endl;
-								}
-								if(array[16]>=1)
-								{
-									cout<<"\t"<<array[16]<<" * Egg Kattiroll         $"<<array[16]*120<<endl;
-								}
-								if(array[17]>=1)
-								{
-									cout<<"\t"<<array[17]<<" * Chicken Kattiroll     $"<<array[17]*150<<endl;
-								}
-								if(array[18]>=1)
-								{
-									cout<<"\t"<<array[18]<<" * Coffee                $"<<array[18]*50<<endl;
-								}
-								if(array[19]>=1)
-								{
-									cout<<"\t"<<array[19]<<" * Cold Drinks           $"<<array[19]*40<<endl;
-								}
-								if(array[20]>=1)
-								{
-									cout<<"\t"<<array[20]<<" * Milk Tea              $"<<array[20]*25<<endl;
-								}
-								if(array[21]>=1)
-								{
-									cout<<"\t"<<array[21]<<" * Fruit Juice           $"<<array[21]*35<<endl;
-								}
-								if(array[22]>=1)
-								{
-									cout<<"\t"<<array[22]<<" * Chocolate Milk        $"<<array[22]*30<<endl;
-								}
-								if(array[23]>=1)
-								{
-									cout<<"\t"<<array[23]<<" * Capuccino             $"<<array[23]*50<<endl;
-								}
-								if(array[24]>=1)
-								{
-									cout<<"\t"<<array[24]<<" * Americano             $"<<array[24]*60<<endl;
-								}
-								if(array[25]>=1)
-								{
-									cout<<"\t"<<array[25]<<" * Espresso              $"<<array[25]*50<<endl;
-								}
-								if(array[26]>=1)
-								{
-									cout<<"\t"<<array[26]<<" * Latte                 $"<<array[26]*80<<endl;
-								}
-								if(array[27]>=1)
-								{
-									cout<<"\t"<<array[27]<<" * Chatpate              $"<<array[27]*50<<endl;
-								}
-								if(array[28]>=1)
-								{
-									cout<<"\t"<<array[28]<<" * Pop Corn              $"<<array[28]*50<<endl;
-								}
-								if(array[29]>=1)
-								{
-									cout<<"\t"<<array[29]<<" * Fruit Salad           $"<<array[29]*65<<endl;
-								}
-								if(array[30]>=1)
-								{
-									cout<<"\t"<<array[30]<<" * Jelly Cup with Fruit  $"<<array[30]*75<<endl;
-								}
-								if(array[31]>=1)
-								{
-									cout<<"\t"<<array[31]<<" * Cookies               $"<<array[31]*60<<endl;
-								}
-								if(array[32]>=1)
-								{
-									cout<<"\t"<<array[32]<<" * Muffins               $"<<array[32]*50<<endl;
-								}
-								if(array[33]>=1)
-								{
-									cout<<"\t"<<array[33]<<" * Chips                 $"<<array[33]*40<<endl;
-								}
-								if(array[34]>=1)
-								{
-									cout<<"\t"<<array[34]<<" * Current Noodles       $"<<array[34]*60<<endl;
-								}
-								if(array[35]>=1)
-								{
-									cout<<"\t"<<array[35]<<" * Nimkin/Dalmot         $"<<array[35]*40<<endl;
-								}
-								if(array[36]>=1)
-								{
-									cout<<"\t"<<array[36]<<" * Ice Cream             $"<<array[36]*70<<endl;
-								}
-								if(array[37]>=1)
-								{
-									cout<<"\t"<<array[37]<<" * Black/White Forest    $"<<array[37]*90<<endl;
-								}
-								if(array[38]>=1)
-								{
-									cout<<"\t"<<array[38]<<" * Waffle                $"<<array[38]*75<<endl;
-								}
-								if(array[39]>=1)
-								{
-									cout<<"\t"<<array[39]<<" * Cream Doughnut        $"<<array[39]*50<<endl;
-								}
-								if(array[40]>=1)
-								{
-									cout<<"\t"<<array[40]<<" * Fruit Pie             $"<<array[40]*60<<endl;
-								}
-								if(array[41]>=1)
-								{
-									cout<<"\t"<<array[41]<<" * Stawberry Sundae      $"<<array[41]*80<<endl;
-								}
-								if(array[42]>=1)
-								{
-									cout<<"\t"<<array[42]<<" * Pastry                $"<<array[42]*60<<endl;
-								}
-								if(array[43]>=1)
-								{
-									cout<<"\t"<<array[43]<<" * Peanut Butter Bread   $"<<array[43]*90<<endl;
-								}
-								if(array[44]>=1)
-								{
-									cout<<"\t"<<array[44]<<" * Fruit Cake            $"<<array[44]*100<<endl;
-								}
-								cout<<"\t==============================================="<<endl;
-								cout<<"\tTOTAL AMOUNT              $"<<sum<<endl;
-								cout<<"\tPAID  AMOUNT              $"<<paidAmt<<endl;
-								cout<<"\t==============================================="<<endl;
-								cout<<"\t\t\tTHANK YOU"<<endl;
-								cout<<"\t==============================================="<<endl;
-								getch();
+								printReceipt(array,45,sum,paidAmt);
 							}
 							break;
 						}
@@ -3655,11 +985,12 @@ class project{
 						break;
 					}
 						}
-					break;
 				}
-			case '2':			
-			{
-				system("cls");
+};
+class viewList{
+	public:
+		void menu2(){
+			system("cls");
 				char passwordChoice;
 	ifstream fin;
 	fin.open("password.dat");
@@ -3723,11 +1054,12 @@ class project{
 			goto flag12;
 		}
 	}
-				break;
-			}
-		case '3' :
-		{
-			string pass,pass1;
+		}
+};
+class changePassword{
+	public:
+	void menu3(){
+		string pass,pass1;
 			system("cls");
 			ifstream test;
 			test.open("password.dat");
@@ -3771,11 +1103,12 @@ class project{
 					
 				}
 			}
-			break;
-		}
-			case '4':
-			{
-				string pass,pass1;
+	}
+};
+class deleteList{
+	public:
+		void menu4(){
+			string pass,pass1;
 			system("cls");
 			ifstream test;
 			test.open("password.dat");
@@ -3784,7 +1117,7 @@ class project{
 				getch();
 			}
 			else{
-				cout<<"Enter old password ";
+				cout<<"Enter password to delete record: ";
 				getline(cin,pass);
 				test>>pass1;
 				test.close();
@@ -3853,7 +1186,7 @@ class project{
 					}
 					else{
 						system("cls");
-						cout<<"Record deleted sucessfully: ";
+						cout<<"Record deleted from all list sucessfully: ";
 						getch();
 					}
 					readFile1>>s.id;
@@ -3880,21 +1213,54 @@ class project{
 				}
 				}
 			}
-				break;
-			}
-			case '5':
-			exit(0);
-				break;
-			default :
-				system("cls");
-				printf("Invalid option.Press any button: ");
-				getch();
-			}
 		}
-	}}
 };
 int main(){
-	project obj;
-	obj.menu();
-	return 0;
+	char menuChoice;
+	food obj1;
+	viewList obj2;
+	changePassword obj3;
+	deleteList obj4;
+	while(1){
+		system("cls");
+			cout<<"\n\t\t\t\t\t\t*..........................*\n";
+			cout<<"\t\t\t\t\t\t\tKIST CAFETERIA\n";					
+			cout<<"\n\n\n\n\n\n\n\t\t\t\t\t\tWe have following menu:\n\n";
+			cout<<"\t\t\t\t\t\t1. Food and Drinks\n";
+			cout<<"\t\t\t\t\t\t2. View List\n";
+			cout<<"\t\t\t\t\t\t3. Change Password\n";
+			cout<<"\t\t\t\t\t\t4. Delete record\n";
+			cout<<"\t\t\t\t\t\t5. Exit\n";
+			cout<<"\t\t\t\t\t\tChoose from the above list: ";
+			menuChoice=getche();
+			switch(menuChoice){
+				case '1':{
+					obj1.menu1();
+					break;
+				}
+				case '2':{
+					obj2.menu2();
+					break;
+				}
+				case '3':{
+					obj3.menu3();
+					break;
+				}
+				case '4':{
+					obj4.menu4();
+					break;
+				}
+				case '5':{
+					exit(0);
+					break;
+				}
+				default:{
+					system("cls");
+				printf("Invalid option.Press any button: ");
+				getch();
+					break;
+				}	
+			}
+	}
+	return (0);
 }
