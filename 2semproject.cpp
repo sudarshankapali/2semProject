@@ -211,7 +211,7 @@ view(){
 	int searchId;
 	cout<<"\n\n\t\t\t\t\tHere are the list you can view\n";
 	system("cls");
-				cout<<"\n\t\t\t\t\t1>>Paid List\n\t\t\t\t\t2>>Liability list\n\t\t\t\t\t3>>Specific list ";
+				cout<<"\n\t\t\t\t\t1>>Paid List\n\t\t\t\t\t2>>Liability list\n\t\t\t\t\t3>>Edit Data ";
 				menuChoice=getche();
 				ifstream readData;
 				switch(menuChoice){
@@ -255,47 +255,45 @@ view(){
 						readData.close();
 						break;
 					}
-					case '3':{/*
+					case '3':{
+						{
 						system("cls");
-						cout<<"\nEnter the ID you want to search: ";
-						cin>>searchId;
-						ifstream readFile1;
-				readFile1.open("student.dat");
+						int editData;
+						int a;
+						cout<<"\nEnter the id you want to edit: ";
+						cin>>editData;
+				ifstream readFile1;
+				readFile1.open("liability.dat");
 				ofstream writeFile1;
-				writeFile1.open("specific.dat");
+				readFile1>>s.id;
+				readFile1>>s.bill;
+				readFile1>>s.paid;
+				writeFile1.open("new1.dat");
 				while(!readFile1.eof()){
-					if(s.id==searchId){
+					if(s.id!=editData){
 						writeFile1<<s.id<<"\t";
 						writeFile1<<s.bill<<"\t\t";
 						writeFile1<<s.paid<<endl;
 					}
 					else{
 						system("cls");
-						cout<<"Record not found with same ID: ";
-						getch();
+						cout<<"\nEnter due amount: ";
+						cin>>a;
+						writeFile1<<s.id<<"\t"<<s.bill<<"\t\t"<<a<<endl;
 					}
-					break;
+					readFile1>>s.id;
+					readFile1>>s.bill;
+					readFile1>>s.paid;
 				}
 				writeFile1.close();
 				readFile1.close();
-				ifstream readFile2;
-				readFile2.open("specific.dat");
-				if(readFile2!=NULL)
-				{
-							system("cls");
-						cout<<"ID\tBill Amount\tDue Amount";
-						while(!readFile2.eof()){
-						getline(readFile2,readAndWrite);
-						cout<<"\n---------------------------------------";
-						cout<<endl<<readAndWrite<<endl;
-						}
-						getch();
-						}
-						else{
-							system("cls");
-							cout<<"file is empty: ";
-						}
-						break;*/
+				}
+				remove("liability.dat");
+				if(rename("new1.dat","liability.dat")!=0){
+					cout<<"\nFile Data changed sucessfully: ";
+					getch();
+						break;
+				}
 					}
 					default:
 						cout<<"\nWrong choice";
