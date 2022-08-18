@@ -8,7 +8,7 @@ struct student{
 	int id;
 	int bill,paid;
 }s;
-void printReceipt(int a[],int size,int s,int p){
+void printReceipt(int a[],int size,int s,int p,int  d){
 	int array[45],k=0,total,paidAmt;
 	for(k=0;k<size;k++){
 		array[k]=a[k];
@@ -19,115 +19,115 @@ void printReceipt(int a[],int size,int s,int p){
 								cout<<"\t***********************************************"<<endl;
 								if(array[0]>=1)
 								{
-									cout<<"\t"<<array[0]<<" * Gralic Potato          $"<<array[0]*60<<endl;
+									cout<<"\t"<<array[0]<<" * Gralic Potato          Rs"<<array[0]*60<<endl;
 								}
 								if(array[1]>=1)
 								{
-									cout<<"\t"<<array[1]<<" * Veg Chowmin            $"<<array[1]*50<<endl;
+									cout<<"\t"<<array[1]<<" * Veg Chowmin            Rs"<<array[1]*50<<endl;
 								}
 								if(array[2]>=1)
 								{
-									cout<<"\t"<<array[2]<<" * Veg Momo               $"<<array[2]*60<<endl;
+									cout<<"\t"<<array[2]<<" * Veg Momo               Rs"<<array[2]*60<<endl;
 								}
 								if(array[3]>=1)
 								{
-									cout<<"\t"<<array[3]<<" * Potato Chips           $"<<array[3]*50<<endl;
+									cout<<"\t"<<array[3]<<" * Potato Chips           Rs"<<array[3]*50<<endl;
 								}
 								if(array[4]>=1)
 								{
-									cout<<"\t"<<array[4]<<" * Burger                 $"<<array[4]*90<<endl;
+									cout<<"\t"<<array[4]<<" * Burger                 Rs"<<array[4]*90<<endl;
 								}
 								if(array[5]>=1)
 								{
-									cout<<"\t"<<array[5]<<" * Sandwitch              $"<<array[5]*70<<endl;
+									cout<<"\t"<<array[5]<<" * Sandwitch              Rs"<<array[5]*70<<endl;
 								}
 								if(array[6]>=1)
 								{
-									cout<<"\t"<<array[6]<<" * Puri Tarkari           $"<<array[6]*80<<endl;
+									cout<<"\t"<<array[6]<<" * Puri Tarkari           Rs"<<array[6]*80<<endl;
 								}
 								if(array[7]>=1)
 								{
-									cout<<"\t"<<array[7]<<" * Alu Paratha            $"<<array[7]*60<<endl;
+									cout<<"\t"<<array[7]<<" * Alu Paratha            Rs"<<array[7]*60<<endl;
 								}
 								if(array[8]>=1)
 								{
-									cout<<"\t"<<array[8]<<" * Frentch Fry            $"<<array[8]*60<<endl;
+									cout<<"\t"<<array[8]<<" * Frentch Fry            Rs"<<array[8]*60<<endl;
 								}
 								if(array[9]>=1)
 								{
-									cout<<"\t"<<array[9]<<" * Chicken Momo           $"<<array[9]*90<<endl;
+									cout<<"\t"<<array[9]<<" * Chicken Momo           Rs"<<array[9]*90<<endl;
 								}
 								if(array[10]>=1)
 								{
-									cout<<"\t"<<array[10]<<" * Chicken Chowmein      $"<<array[10]*80<<endl;
+									cout<<"\t"<<array[10]<<" * Chicken Chowmein      Rs"<<array[10]*80<<endl;
 								}
 								if(array[11]>=1)
 								{
-									cout<<"\t"<<array[11]<<" * Chicken Burger        $"<<array[11]*70<<endl;
+									cout<<"\t"<<array[11]<<" * Chicken Burger        Rs"<<array[11]*70<<endl;
 								}
 								if(array[12]>=1)
 								{
-									cout<<"\t"<<array[12]<<" * Chicken Biriyani      $"<<array[12]*100<<endl;
+									cout<<"\t"<<array[12]<<" * Chicken Biriyani      Rs"<<array[12]*100<<endl;
 								}
 								if(array[13]>=1)
 								{
-									cout<<"\t"<<array[13]<<" * Buff Momo             $"<<array[13]*70<<endl;
+									cout<<"\t"<<array[13]<<" * Buff Momo             Rs"<<array[13]*70<<endl;
 								}
 								if(array[14]>=1)
 								{
-									cout<<"\t"<<array[14]<<" * Pork Momo             $"<<array[14]*70<<endl;
+									cout<<"\t"<<array[14]<<" * Pork Momo             Rs"<<array[14]*70<<endl;
 								}
 								if(array[15]>=1)
 								{
-									cout<<"\t"<<array[15]<<" * Buff/Chicken Sausage  $"<<array[15]*300<<endl;
+									cout<<"\t"<<array[15]<<" * Buff/Chicken Sausage  Rs"<<array[15]*300<<endl;
 								}
 								if(array[16]>=1)
 								{
-									cout<<"\t"<<array[16]<<" * Egg Kattiroll         $"<<array[16]*120<<endl;
+									cout<<"\t"<<array[16]<<" * Egg Kattiroll         Rs"<<array[16]*120<<endl;
 								}
 								if(array[17]>=1)
 								{
-									cout<<"\t"<<array[17]<<" * Chicken Kattiroll     $"<<array[17]*150<<endl;
+									cout<<"\t"<<array[17]<<" * Chicken Kattiroll     Rs"<<array[17]*150<<endl;
 								}
 								if(array[18]>=1)
 								{
-									cout<<"\t"<<array[18]<<" * Coffee                $"<<array[18]*50<<endl;
+									cout<<"\t"<<array[18]<<" * Coffee                Rs"<<array[18]*50<<endl;
 								}
 								if(array[19]>=1)
 								{
-									cout<<"\t"<<array[19]<<" * Cold Drinks           $"<<array[19]*40<<endl;
+									cout<<"\t"<<array[19]<<" * Cold Drinks           Rs"<<array[19]*40<<endl;
 								}
 								if(array[20]>=1)
 								{
-									cout<<"\t"<<array[20]<<" * Milk Tea              $"<<array[20]*25<<endl;
+									cout<<"\t"<<array[20]<<" * Milk Tea              Rs"<<array[20]*25<<endl;
 								}
 								if(array[21]>=1)
 								{
-									cout<<"\t"<<array[21]<<" * Fruit Juice           $"<<array[21]*35<<endl;
+									cout<<"\t"<<array[21]<<" * Fruit Juice           Rs"<<array[21]*35<<endl;
 								}
 								if(array[22]>=1)
 								{
-									cout<<"\t"<<array[22]<<" * Chocolate Milk        $"<<array[22]*30<<endl;
+									cout<<"\t"<<array[22]<<" * Chocolate Milk        Rs"<<array[22]*30<<endl;
 								}
 								if(array[23]>=1)
 								{
-									cout<<"\t"<<array[23]<<" * Capuccino             $"<<array[23]*50<<endl;
+									cout<<"\t"<<array[23]<<" * Capuccino             Rs"<<array[23]*50<<endl;
 								}
 								if(array[24]>=1)
 								{
-									cout<<"\t"<<array[24]<<" * Americano             $"<<array[24]*60<<endl;
+									cout<<"\t"<<array[24]<<" * Americano             Rs"<<array[24]*60<<endl;
 								}
 								if(array[25]>=1)
 								{
-									cout<<"\t"<<array[25]<<" * Espresso              $"<<array[25]*50<<endl;
+									cout<<"\t"<<array[25]<<" * Espresso              Rs"<<array[25]*50<<endl;
 								}
 								if(array[26]>=1)
 								{
-									cout<<"\t"<<array[26]<<" * Latte                 $"<<array[26]*80<<endl;
+									cout<<"\t"<<array[26]<<" * Latte                 Rs"<<array[26]*80<<endl;
 								}
 								if(array[27]>=1)
 								{
-									cout<<"\t"<<array[27]<<" * Chatpate              $"<<array[27]*50<<endl;
+									cout<<"\t"<<array[27]<<" * Chatpate              Rs"<<array[27]*50<<endl;
 								}
 								if(array[28]>=1)
 								{
@@ -198,8 +198,9 @@ void printReceipt(int a[],int size,int s,int p){
 									cout<<"\t"<<array[44]<<" * Fruit Cake            $"<<array[44]*100<<endl;
 								}
 								cout<<"\t==============================================="<<endl;
-								cout<<"\tTOTAL AMOUNT              $"<<s<<endl;
-								cout<<"\tPAID  AMOUNT              $"<<p<<endl;
+								cout<<"\tTOTAL AMOUNT              Rs"<<s<<endl;
+								cout<<"\tPAID  AMOUNT              Rs"<<p<<endl;
+								cout<<"\tDUE  AMOUNT               Rs"<<d<<endl;
 								cout<<"\t==============================================="<<endl;
 								cout<<"\t\t\tTHANK YOU"<<endl;
 								cout<<"\t==============================================="<<endl;
@@ -277,8 +278,12 @@ view(){
 					}
 					else{
 						system("cls");
+						cout<<"ID"<<"\t"<<"Bill\t\tPaid"<<endl;
+						cout<<s.id<<"\t"<<s.bill<<"\t\t"<<s.paid<<endl;
 						cout<<"\nEnter due amount: ";
 						cin>>a;
+						cout<<"\nFile Data changed sucessfully: ";
+						getch();
 						writeFile1<<s.id<<"\t"<<s.bill<<"\t\t"<<a<<endl;
 					}
 					readFile1>>s.id;
@@ -426,14 +431,14 @@ class food{
 								amt=paidAmt-sum;
 								cout<<"\nReturn amount Rs"<<amt;
 								getch();
-								printReceipt(array,45,sum,paidAmt);
+								printReceipt(array,45,sum,paidAmt,amt);
 							}
 							else if(paidAmt<sum){
 								amt=sum-paidAmt;
 								s.paid=amt;
 								cout<<"\nYour due amount is Rs"<<amt;
 								getch();
-								printReceipt(array,45,sum,paidAmt);
+								printReceipt(array,45,sum,paidAmt,amt);
 								ofstream a;
 								a.open("liability.dat", ios :: app);{
 									a<<s.id<<"\t"<<s.bill<<"\t\t"<<s.paid<<endl;
@@ -443,7 +448,7 @@ class food{
 							else {
 								cout<<"Return amount is Rs 0";
 								getch();
-								printReceipt(array,45,sum,paidAmt);
+								printReceipt(array,45,sum,paidAmt,amt);
 							}
 							break;
 						}
@@ -560,13 +565,13 @@ class food{
 								amt=paidAmt-sum;
 								cout<<"\nReturn amount Rs"<<amt;
 								getch();
-								printReceipt(array,45,sum,paidAmt);
+								printReceipt(array,45,sum,paidAmt,amt);
 							}
 							else if(paidAmt<sum){
 								amt=sum-paidAmt;
 								cout<<"\nYour due amount is Rs"<<amt;
 								getch();
-								printReceipt(array,45,sum,paidAmt);
+								printReceipt(array,45,sum,paidAmt,amt);
 								ofstream a;
 								s.paid=amt;
 								a.open("liability.dat", ios :: app);{
@@ -576,7 +581,7 @@ class food{
 							}else {
 								cout<<"Return amount is Rs 0";
 								getch();
-								printReceipt(array,45,sum,paidAmt);
+								printReceipt(array,45,sum,paidAmt,amt);
 							}
 							break;
 						}
@@ -689,13 +694,13 @@ class food{
 								amt=paidAmt-sum;
 								cout<<"\nReturn amount Rs"<<amt;
 								getch();
-								printReceipt(array,45,sum,paidAmt);
+								printReceipt(array,45,sum,paidAmt,amt);
 							}
 							else if(paidAmt<sum){
 								amt=sum-paidAmt;
 								cout<<"\nYour due amount is Rs"<<amt;
 								getch();
-								printReceipt(array,45,sum,paidAmt);
+								printReceipt(array,45,sum,paidAmt,amt);
 								ofstream a;
 								s.paid=amt;
 								a.open("liability.dat", ios :: app);{
@@ -706,7 +711,7 @@ class food{
 							else {
 								cout<<"Return amount is Rs 0";
 								getch();
-								printReceipt(array,45,sum,paidAmt);
+								printReceipt(array,45,sum,paidAmt,amt);
 							}
 							break;
 						}
@@ -820,13 +825,13 @@ class food{
 								amt=paidAmt-sum;
 								cout<<"\nReturn amount Rs"<<amt;
 								getch();
-								printReceipt(array,45,sum,paidAmt);
+								printReceipt(array,45,sum,paidAmt,amt);
 							}
 							else if(paidAmt<sum){
 								amt=sum-paidAmt;
 								cout<<"\nYour due amount is Rs"<<amt;
 								getch();
-								printReceipt(array,45,sum,paidAmt);
+								printReceipt(array,45,sum,paidAmt,amt);
 								ofstream a;
 								s.paid=amt;
 								a.open("liability.dat", ios :: app);{
@@ -837,7 +842,7 @@ class food{
 							else {
 								cout<<"Return amount is Rs 0";
 								getch();
-								printReceipt(array,45,sum,paidAmt);
+								printReceipt(array,45,sum,paidAmt,amt);
 							}
 							break;
 						}
@@ -951,7 +956,7 @@ class food{
 								amt=paidAmt-sum;
 								cout<<"\nReturn amount Rs"<<amt;
 								getch();
-								printReceipt(array,45,sum,paidAmt);
+								printReceipt(array,45,sum,paidAmt,amt);
 							}
 							else if(paidAmt<sum){
 								amt=sum-paidAmt;
@@ -963,12 +968,12 @@ class food{
 									a<<s.id<<"\t"<<s.bill<<"\t\t"<<s.paid<<endl;
 									a.close();
 								}
-								printReceipt(array,45,sum,paidAmt);
+								printReceipt(array,45,sum,paidAmt,amt);
 							}
 							else {
 								cout<<"Return amount is Rs 0";
 								getch();
-								printReceipt(array,45,sum,paidAmt);
+								printReceipt(array,45,sum,paidAmt,amt);
 							}
 							break;
 						}
@@ -1115,11 +1120,11 @@ class deleteList{
 				getch();
 			}
 			else{
-				cout<<"Enter password to delete record: ";
-				getline(cin,pass);
 				test>>pass1;
 				test.close();
-				if(pass1!=pass){
+				cout<<"Enter password to delete record: ";
+				getline(cin,pass);	
+				if(pass!=pass1){
 					cout<<endl<<"Password is incorrect. Access Denied"<<endl;
 					getche();
 				}
@@ -1157,16 +1162,8 @@ class deleteList{
 					cout<<"Could not remove file: ";
 					getch();
 				}
-				else{
-					system("cls");
-					cout<<"File removed sucessfully: \n";
-				}
 				if(rename("new.dat","liability.dat")!=0){
 					cout<<"Could not rename file: ";
-					getch();
-				}
-				else{
-					cout<<"File renamed sucessfully: ";
 					getch();
 				}
 				ifstream readFile1;
@@ -1197,16 +1194,8 @@ class deleteList{
 					cout<<"Could not remove file: ";
 					getch();
 				}
-				else{
-					system("cls");
-					cout<<"File removed sucessfully: ";
-				}
 				if(rename("new1.dat","student.dat")!=0){
 					cout<<"could not rename file: ";
-					getch();
-				}
-				else{
-					cout<<"file renamed sucessfully: ";
 					getch();
 				}
 				}
